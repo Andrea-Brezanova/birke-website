@@ -1,42 +1,22 @@
-import { Logo } from "./Logo";
-
 export function Footer() {
   return (
-    <footer className="bg-forest text-ivory">
-      <div className="mx-auto max-w-6xl px-5 py-10 sm:px-8 lg:px-12">
-        <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
-          <div>
-            <Logo light />
-            <p className="mt-4 text-sm text-ivory/70">Nantucket, Massachusetts</p>
-          </div>
-
-          <div className="space-y-1.5 text-sm text-ivory/80">
-            <p>
-              <a href="tel:5083743018" className="transition-colors hover:text-ivory">
-                508-374-3018
-              </a>
-            </p>
-            <p>
-              <a
-                href="mailto:birkegardencare@gmail.com"
-                className="transition-colors hover:text-ivory"
-              >
-                birkegardencare@gmail.com
-              </a>
-            </p>
-            <p>
-              <a
-                href="https://birkegardens.com"
-                className="transition-colors hover:text-ivory"
-              >
-                birkegardens.com
-              </a>
-            </p>
-          </div>
+    <footer style={{ backgroundColor: "#143520", padding: "56px 56px 40px" }}>
+      <div className="mx-auto max-w-[1080px]">
+        <div
+          className="flex flex-col items-center pb-8"
+          style={{ borderBottom: "1px solid rgba(251,248,241,.16)" }}
+        >
+          {/* BG monogram — place bg-logo-light.png in /public */}
+          <img src="/bg-logo-light.png" alt="Birke Garden Care" className="h-[118px] w-auto" />
         </div>
 
-        <p className="mt-8 border-t border-ivory/15 pt-6 text-xs text-ivory/50">
-          &copy; {new Date().getFullYear()} Birke Garden Care
+        <p className="mt-6 text-center text-[13px]" style={{ color: "#C6D3BC" }}>
+          © Copyright 2026 &nbsp;|&nbsp; birkegardens.com &nbsp;|&nbsp; All Rights
+          Reserved. &nbsp;|&nbsp; Contact &nbsp;|&nbsp; Testimonials &nbsp;|&nbsp; Job
+          Opportunities
+        </p>
+        <p className="mt-2 text-center text-[12px]" style={{ color: "#9DB08F" }}>
+          Branding, website and logo design by Andrea
         </p>
       </div>
     </footer>
