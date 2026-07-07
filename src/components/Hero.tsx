@@ -2,29 +2,66 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <section id="home" className="relative" aria-labelledby="hero-heading">
+    <section id="home" className="relative min-h-[100svh]" aria-labelledby="hero-heading">
       {/* Background photo */}
       <Image
-        src="/img-heroJPG.JPG"
-        alt="Nantucket hydrangeas in bloom"
+        src="/IMG_5490.JPG"
+        alt="Pink garden flowers in bloom on Nantucket"
         fill
         priority
         sizes="100vw"
         className="object-cover"
       />
 
-      <div className="relative flex min-h-[100svh] flex-col items-center justify-end px-5 pb-14 text-center sm:pb-20">
+      {/* Overlay for legibility */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(20,53,32,.12) 0%, rgba(20,53,32,.16) 45%, rgba(20,53,32,.40) 100%)",
+        }}
+        aria-hidden="true"
+      />
+
+      <div className="relative mx-auto flex min-h-[100svh] max-w-4xl flex-col items-center justify-center px-5 text-center">
+        <p
+          className="text-[13px] font-semibold uppercase tracking-[0.32em]"
+          style={{ color: "#C6D3BC", textShadow: "0 1px 10px rgba(20,53,32,.6)" }}
+        >
+          Birke Garden Care · Nantucket
+        </p>
+
         <h1
           id="hero-heading"
-          className="inline-block max-w-[92vw] rounded-xl px-6 py-4 font-serif font-medium text-ivory sm:whitespace-nowrap"
+          className="mt-6 font-serif font-medium leading-[1.02] text-ivory"
           style={{
-            fontSize: "clamp(1.15rem, 3.4vw, 1.9rem)",
-            background: "rgba(20,53,32,.55)",
-            backdropFilter: "blur(2px)",
+            fontSize: "clamp(3rem, 9vw, 6rem)",
+            textShadow: "0 2px 12px rgba(20,53,32,.75), 0 1px 30px rgba(20,53,32,.5)",
           }}
         >
-          Reliable garden care for homes, rentals, and seasonal properties.
+          We love what we do.
         </h1>
+
+        <p
+          className="mt-6 max-w-[620px] text-[18px] leading-relaxed sm:text-[21px]"
+          style={{ color: "#F1EBDD", textShadow: "0 1px 14px rgba(20,53,32,.65)" }}
+        >
+          Reliable garden care for Nantucket homes, rentals, and seasonal
+          properties.
+        </p>
+
+        <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:gap-4">
+          <a href="#contact" className="btn-primary">
+            Get in touch
+          </a>
+          <a
+            href="#services"
+            className="inline-flex min-h-11 items-center justify-center rounded-lg border px-6 py-3 text-sm font-medium tracking-wide transition-colors"
+            style={{ borderColor: "rgba(251,248,241,.6)", color: "#FBF8F1" }}
+          >
+            See our services
+          </a>
+        </div>
       </div>
     </section>
   );
