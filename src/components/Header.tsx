@@ -32,7 +32,7 @@ export function Header() {
     <header
       className="fixed inset-x-0 top-0 z-50"
       style={{
-        backgroundColor: isHeroTop ? "rgba(20,53,32,0.46)" : "rgba(251,248,241,0.92)",
+        backgroundColor: isHeroTop ? "rgba(20,53,32,0.46)" : "#FBF8F1",
         borderBottom: isHeroTop
           ? "1px solid rgba(251,248,241,.14)"
           : "1px solid rgba(30,74,44,.14)",

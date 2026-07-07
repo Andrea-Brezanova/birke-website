@@ -99,8 +99,11 @@ export function ServicesTabs() {
   const primaryFailed = failedImages[activePrimaryKey];
 
   return (
-    <section id="services" className="scroll-mt-28 bg-ivory px-5 py-8 sm:px-8 sm:py-10">
-      <div className="mx-auto max-w-[1080px]">
+    <section
+      id="services"
+      className="-mt-[88px] scroll-mt-0 bg-ivory px-5 pb-10 pt-[98px] sm:px-8 sm:pb-12 sm:pt-[104px]"
+    >
+      <div className="mx-auto flex min-h-[calc(100svh-88px)] max-w-[1080px] flex-col">
         <p
           className="text-center text-[13px] uppercase tracking-[0.3em]"
           style={{ color: "#7A8770" }}
@@ -147,9 +150,9 @@ export function ServicesTabs() {
           role="tabpanel"
           id={`panel-${active.id}`}
           aria-labelledby={`tab-${active.id}`}
-          className="mt-8 grid items-start gap-8 md:mt-10 md:grid-cols-[1fr_1fr] md:gap-12"
+          className="mt-7 grid items-center gap-8 md:mt-8 md:grid-cols-[1fr_1fr] md:gap-12"
         >
-          <div>
+          <div className="md:self-center">
             <h3
               className="font-serif text-[34px] font-medium leading-tight md:text-[42px]"
               style={{ color: "#1E4A2C" }}
@@ -178,7 +181,7 @@ export function ServicesTabs() {
             ) : null}
           </div>
 
-          <div className="relative h-[300px] overflow-hidden rounded-[16px] sm:h-[360px] md:h-[404px]">
+          <div className="relative h-[340px] overflow-hidden rounded-[16px] sm:h-[420px] md:h-[520px]">
             {primaryFailed ? (
               <div
                 className="flex h-full w-full items-center justify-center text-center text-[17px]"
