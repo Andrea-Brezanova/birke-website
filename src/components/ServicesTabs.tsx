@@ -13,19 +13,6 @@ type Service = {
 
 const services: Service[] = [
   {
-    id: "garden-care",
-    label: "Garden Care",
-    title: "Garden Care",
-    description:
-      "Hands-on, seasonal attention for established beds and borders — planting, weeding, deadheading, dividing, and the steady care that keeps a garden looking its best from spring through fall.",
-    imageSrc: "/garden-care.jpg",
-    bullets: [
-      "Seasonal planting and bed refreshes",
-      "Weeding, deadheading, and dividing",
-      "Steady care from spring through fall",
-    ],
-  },
-  {
     id: "window-boxes",
     label: "Window Boxes & Containers",
     title: "Window Boxes & Containers",
@@ -38,29 +25,29 @@ const services: Service[] = [
     ],
   },
   {
-    id: "design",
-    label: "Design & Makeovers",
-    title: "Design & Makeovers",
+    id: "garden-care",
+    label: "Full Garden Care",
+    title: "Full Garden Care",
     description:
-      "Thoughtful refreshes and full makeovers — reworking tired beds, choosing plants suited to Nantucket conditions, and bringing quiet new life to an outdoor space.",
-    imageSrc: "/design-makeovers.jpg",
+      "Hands-on, seasonal attention for established beds and borders — from cleanups and planting to the steady upkeep that keeps a garden looking its best from spring through fall.",
+    imageSrc: "/daisies.JPG",
     bullets: [
-      "Refreshes for tired garden spaces",
-      "Plant choices suited to island conditions",
-      "Elegant, practical transformations",
+      "Spring and fall cleanups and mulching",
+      "Perennial and annual planting",
+      "Weeding, deadheading, deadwooding, and rose care",
     ],
   },
   {
     id: "maintenance",
-    label: "Maintenance",
-    title: "Maintenance",
+    label: "Greenscapes Maintenance",
+    title: "Greenscapes Maintenance",
     description:
       "Reliable, ongoing upkeep on a schedule that suits your property, so the garden stays tidy, healthy, and cared for throughout the season.",
-    imageSrc: "/maintenance.jpg",
+    imageSrc: "/greenscapes-hydrangea.png",
     bullets: [
-      "Recurring weekly or bi-weekly care",
-      "Tidy, healthy, guest-ready gardens",
-      "Dependable communication and timing",
+      "Recurring weekly, bi-weekly or monthly care",
+      "Monitoring plant health and seasonal needs",
+      "Efficient and environmentally friendly treatments",
     ],
   },
   {
@@ -70,18 +57,36 @@ const services: Service[] = [
     description:
       "Whether you have a design in mind or would like creative guidance, we help create and install outdoor spaces that feel beautiful, welcoming, and made to be enjoyed.",
     imageSrc: "/install.jpg",
+    bullets: [
+      "Plant selection and placement",
+      "Installation from concept to finish",
+    ],
+  },
+  {
+    id: "makeovers",
+    label: "Makeovers",
+    title: "Makeovers",
+    description:
+      "Thoughtful refreshes and full makeovers — reworking tired beds, choosing plants suited to Nantucket conditions, and bringing quiet new life to an outdoor space.",
+    imageSrc: "/makeovers.JPG",
+    bullets: [
+      "Refreshes for tired or overgrown garden spaces",
+      "Plant choices suited to Nantucket conditions",
+      "Seasonal color, texture, and structure",
+      "Practical updates that make the garden feel cared for",
+    ],
   },
   {
     id: "coordination",
-    label: "Additional Coordination",
-    title: "Additional Coordination",
+    label: "Additional Services",
+    title: "Additional Services",
     description:
       "Lawns, hedges, and related outdoor care may be coordinated when needed — connecting you with trusted help so everything outside your home is looked after.",
-    imageSrc: "/additional-coordination.jpg",
+    imageSrc: "/lawn.jpeg",
     bullets: [
-      "Coordination only when needed",
-      "Lawns and hedges are not core services",
-      "Trusted support for complete outdoor care",
+      "Professional design support available",
+      "Lawn and hedge care coordination",
+      "Trusted help for larger outdoor projects",
     ],
   },
 ];
@@ -94,10 +99,10 @@ export function ServicesTabs() {
   const primaryFailed = failedImages[activePrimaryKey];
 
   return (
-    <section id="services" className="scroll-mt-32 bg-ivory px-5 py-12 sm:px-8 sm:py-14">
-      <div className="mx-auto flex min-h-[100svh] max-w-[1080px] flex-col justify-center">
+    <section id="services" className="scroll-mt-28 bg-ivory px-5 py-8 sm:px-8 sm:py-10">
+      <div className="mx-auto max-w-[1080px]">
         <p
-          className="text-[13px] uppercase tracking-[0.3em]"
+          className="text-center text-[13px] uppercase tracking-[0.3em]"
           style={{ color: "#7A8770" }}
         >
           What we do
@@ -178,7 +183,7 @@ export function ServicesTabs() {
               <div
                 className="flex h-full w-full items-center justify-center text-center text-[17px]"
                 style={{
-                  backgroundColor: "#F1EBDD",
+                  backgroundColor: "transparent",
                   color: "#7A8770",
                 }}
               >
@@ -188,7 +193,7 @@ export function ServicesTabs() {
               <img
                 src={active.imageSrc}
                 alt={`${active.title} service`}
-                className="h-full w-full object-cover"
+                className="h-full w-full object-contain"
                 onError={() =>
                   setFailedImages((prev) => ({
                     ...prev,

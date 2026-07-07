@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <section id="home" className="relative min-h-[100svh] scroll-mt-32" aria-labelledby="hero-heading">
+    <section id="home" className="relative min-h-[100svh]" aria-labelledby="hero-heading">
       {/* Background photo */}
       <Image
         src="/IMG_5490.JPG"
@@ -43,7 +43,7 @@ export function Hero() {
         </p>
 
         <div className="mt-11 flex justify-center">
-          <a href="#contact" className="btn-hero-outline">
+          <a href="#contact" className="btn-hero">
             Schedule a Meeting
           </a>
         </div>
