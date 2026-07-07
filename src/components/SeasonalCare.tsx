@@ -2,7 +2,7 @@ export function SeasonalCare() {
   return (
     <section
       id="our-mission"
-      className="-mt-[88px] scroll-mt-0 bg-forest px-6 pb-24 pt-[112px] text-center sm:px-12"
+      className="scroll-mt-[88px] bg-forest px-6 pb-0 pt-[112px] text-center sm:px-12"
       aria-labelledby="mission-heading"
     >
       <div className="mx-auto max-w-[840px]">
@@ -17,10 +17,19 @@ export function SeasonalCare() {
           className="mt-6 font-serif text-[28px] font-normal text-ivory sm:text-[34px]"
           style={{ lineHeight: 1.42 }}
         >
-          Our mission is to make every customer&apos;s needs a priority. We work with
-          flexibility, care, and honest communication to create outdoor spaces that
-          feel beautiful, welcoming, and well cared for.
+          We treat every customer&apos;s needs as a priority. We work with flexibility,
+          transparency, and efficiency to keep outdoor spaces beautiful, welcoming,
+          and well cared for.
         </p>
+        <div className="relative left-1/2 right-1/2 mt-10 -ml-[50vw] -mr-[50vw] w-screen">
+          <div className="h-[50vh] min-h-[320px] w-screen overflow-hidden sm:h-[55vh] md:h-[60vh] md:min-h-[420px] lg:h-[68vh]">
+            <img
+              src="/mission-flowers.png"
+              alt="Seasonal flower arrangement"
+              className="h-full w-full object-cover object-center"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

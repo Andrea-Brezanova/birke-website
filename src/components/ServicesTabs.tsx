@@ -101,7 +101,7 @@ export function ServicesTabs() {
   return (
     <section
       id="services"
-      className="-mt-[88px] scroll-mt-0 bg-ivory px-5 pb-10 pt-[98px] sm:px-8 sm:pb-12 sm:pt-[104px]"
+      className="scroll-mt-[88px] bg-ivory px-5 pb-10 pt-10 sm:px-8 sm:pb-12 sm:pt-12"
     >
       <div className="mx-auto flex min-h-[calc(100svh-88px)] max-w-[1080px] flex-col">
         <p
