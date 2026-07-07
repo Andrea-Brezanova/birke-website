@@ -19,26 +19,31 @@ export function Header() {
 
   return (
     <header
-      className="sticky top-0 z-50 bg-forest"
-      style={{ borderBottom: "1px solid rgba(251,248,241,.14)" }}
+      className="fixed inset-x-0 top-0 z-50"
+      style={{
+        background:
+          "linear-gradient(180deg, rgba(20,53,32,.55) 0%, rgba(20,53,32,.28) 100%)",
+        backdropFilter: "blur(6px)",
+        WebkitBackdropFilter: "blur(6px)",
+      }}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2.5 sm:px-6">
+      <div className="flex w-full items-center justify-between py-5 pl-3 pr-4 sm:py-7 sm:pl-5 sm:pr-8">
         <a href="#home" onClick={closeMenu} className="flex items-center">
-          {/* White-on-transparent wordmark generated from birke-wordmark-light.png */}
+          {/* Ivory wordmark (matches hero text color) generated from birke-wordmark-light.png */}
           <img
-            src="/birke-wordmark-white.png"
+            src="/birke-wordmark-ivory.png"
             alt="Birke Garden Care"
             className="h-[64px] w-auto sm:h-[84px]"
           />
         </a>
 
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">
+        <nav className="hidden items-center gap-10 md:flex" aria-label="Main navigation">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-[14px] uppercase tracking-[0.16em] transition-opacity hover:opacity-70"
-              style={{ color: "#E4EBDD" }}
+              className="text-[16px] uppercase tracking-[0.16em] transition-opacity hover:opacity-70"
+              style={{ color: "#FBF8F1" }}
             >
               {link.label}
             </a>
@@ -75,7 +80,7 @@ export function Header() {
         <nav
           id="mobile-nav"
           className="border-t px-5 py-4 md:hidden"
-          style={{ borderColor: "rgba(251,248,241,.14)" }}
+          style={{ borderColor: "rgba(251,248,241,.14)", backgroundColor: "#1E4A2C" }}
           aria-label="Mobile navigation"
         >
           <ul className="flex flex-col">
@@ -84,8 +89,8 @@ export function Header() {
                 <a
                   href={link.href}
                   onClick={closeMenu}
-                  className="flex min-h-11 items-center text-[12px] uppercase tracking-[0.16em]"
-                  style={{ color: "#E4EBDD" }}
+                  className="flex min-h-11 items-center text-[14px] uppercase tracking-[0.16em]"
+                  style={{ color: "#FBF8F1" }}
                 >
                   {link.label}
                 </a>
