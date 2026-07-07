@@ -23,38 +23,28 @@ export function Hero() {
         aria-hidden="true"
       />
 
-      <div className="relative mx-auto flex min-h-[100svh] max-w-4xl flex-col items-center justify-center px-5 text-center">
-        <p
-          className="text-[13px] font-semibold uppercase tracking-[0.32em]"
-          style={{ color: "#C6D3BC", textShadow: "0 1px 10px rgba(20,53,32,.6)" }}
-        >
-          Birke Garden Care · Nantucket
-        </p>
-
+      <div className="relative mx-auto flex min-h-[100svh] max-w-4xl flex-col items-center justify-end px-5 pb-[14vh] text-center">
         <h1
           id="hero-heading"
-          className="mt-6 font-serif font-medium leading-[1.04] text-ivory"
+          className="font-serif font-medium leading-[1.02] text-ivory"
           style={{
-            fontSize: "clamp(2.75rem, 8vw, 5.5rem)",
+            fontSize: "clamp(3rem, 9vw, 6rem)",
             textShadow: "0 2px 12px rgba(20,53,32,.75), 0 1px 30px rgba(20,53,32,.5)",
           }}
         >
-          Thoughtful garden care on Nantucket.
+          We love what we do.
         </h1>
 
         <p
           className="mt-6 max-w-[620px] text-[18px] leading-relaxed sm:text-[21px]"
           style={{ color: "#F1EBDD", textShadow: "0 1px 14px rgba(20,53,32,.65)" }}
         >
-          Reliable care for homes, rentals, and seasonal properties.
+          Thoughtful gardening for Nantucket homes and rentals.
         </p>
 
-        <div className="mt-11 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-5">
-          <a href="tel:5083743018" className="btn-hero">
-            Call/Text Andrea
-          </a>
-          <a href="#services" className="btn-hero-outline">
-            See Services
+        <div className="mt-11 flex justify-center">
+          <a href="#contact" className="btn-hero-outline">
+            Schedule Appointment
           </a>
         </div>
       </div>
