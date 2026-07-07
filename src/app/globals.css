@@ -1,33 +1,35 @@
 @import "tailwindcss";
 
 :root {
-  --color-ivory: #faf8f3;
-  --color-ivory-warm: #f5f1e8;
-  --color-white: #ffffff;
-  --color-forest: #1b3d2f;
-  --color-forest-hover: #254d3d;
-  --color-sage: #9bb5a5;
-  --color-sage-soft: #e8efe9;
-  --color-sage-muted: #d4e0d8;
-  --color-text-muted: #5c6b61;
-  --color-border: #e5eae6;
+  --color-forest: #1E4A2C;
+  --color-forest-deep: #143520;
+  --color-ivory: #FBF8F1;
+  --color-cream: #F1EBDD;
+  --color-body: #4C5A47;
+  --color-label: #7A8770;
+  --color-sage: #9DB08F;
+  --color-sage-soft: #C6D3BC;
+  --color-sage-pale: #D3E0CA;
+  --color-hero-sub: #E9EFE3;
+  --color-nav-link: #E4EBDD;
+  --color-input-text: #26301F;
 }
 
 @theme inline {
-  --color-ivory: #faf8f3;
-  --color-ivory-warm: #f5f1e8;
-  --color-white: #ffffff;
-  --color-forest: #1b3d2f;
-  --color-forest-hover: #254d3d;
-  --color-sage: #9bb5a5;
-  --color-sage-soft: #e8efe9;
-  --color-sage-muted: #d4e0d8;
-  --color-text-muted: #5c6b61;
-  --color-border: #e5eae6;
+  --color-forest: #1E4A2C;
+  --color-forest-deep: #143520;
+  --color-ivory: #FBF8F1;
+  --color-cream: #F1EBDD;
+  --color-body: #4C5A47;
+  --color-label: #7A8770;
+  --color-sage: #9DB08F;
+  --color-sage-soft: #C6D3BC;
+  --color-sage-pale: #D3E0CA;
+  --color-hero-sub: #E9EFE3;
+  --color-nav-link: #E4EBDD;
+  --color-input-text: #26301F;
   --font-serif: var(--font-serif);
   --font-sans: var(--font-sans);
-  --shadow-soft: 0 4px 24px -4px rgba(27, 61, 47, 0.08);
-  --shadow-card: 0 2px 16px -2px rgba(27, 61, 47, 0.06);
 }
 
 html {
@@ -38,7 +40,7 @@ html {
 
 body {
   background-color: var(--color-ivory);
-  color: var(--color-forest);
+  color: var(--color-body);
   font-family: var(--font-sans), system-ui, sans-serif;
 }
 
@@ -46,54 +48,11 @@ a {
   color: inherit;
 }
 
-@layer components {
-  .section-padding {
-    @apply px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24;
-  }
+.font-serif {
+  font-family: var(--font-serif), Georgia, serif;
+}
 
-  .section-heading {
-    font-family: var(--font-serif), Georgia, serif;
-    @apply text-3xl font-medium tracking-tight text-forest sm:text-4xl;
-  }
-
-  .section-subheading {
-    @apply mt-4 max-w-2xl text-base leading-relaxed text-text-muted sm:text-lg;
-  }
-
-  .card {
-    @apply rounded-xl border border-border bg-white;
-    box-shadow: var(--shadow-card);
-  }
-
-  .btn-primary {
-    @apply inline-flex min-h-11 items-center justify-center rounded-lg px-6 py-3 text-sm font-medium tracking-wide transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest focus-visible:ring-offset-2;
-    background-color: var(--color-forest);
-    color: var(--color-ivory);
-  }
-
-  .btn-primary:hover {
-    background-color: var(--color-forest-hover);
-  }
-
-  .btn-secondary {
-    @apply inline-flex min-h-11 items-center justify-center rounded-lg border px-6 py-3 text-sm font-medium tracking-wide transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest focus-visible:ring-offset-2;
-    border-color: var(--color-border);
-    color: var(--color-forest);
-    background-color: var(--color-white);
-  }
-
-  .btn-secondary:hover {
-    background-color: var(--color-sage-soft);
-    border-color: var(--color-sage);
-  }
-
-  .btn-header {
-    @apply hidden min-h-10 items-center justify-center rounded-lg px-4 py-2 text-sm font-medium transition-colors md:inline-flex;
-    background-color: var(--color-forest);
-    color: var(--color-ivory);
-  }
-
-  .btn-header:hover {
-    background-color: var(--color-forest-hover);
-  }
+.img-placeholder {
+  background-color: #cfcfcf;
+  background-image: linear-gradient(135deg, #d4d4d4 0%, #c4c4c4 100%);
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Cormorant_Garamond, Source_Sans_3 } from "next/font/google";
+import { Cormorant_Garamond, Mulish } from "next/font/google";
 import "./globals.css";
 
 const serif = Cormorant_Garamond({
@@ -10,25 +10,16 @@ const serif = Cormorant_Garamond({
   style: ["normal", "italic"],
 });
 
-const sans = Source_Sans_3({
+const sans = Mulish({
   subsets: ["latin"],
   variable: "--font-sans",
-  weight: ["400", "500", "600"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Birke Garden Care | Nantucket Garden Maintenance",
+  title: "Birke Garden Care — Nantucket Garden Care",
   description:
-    "Boutique garden care for Nantucket homes, rentals, and seasonal properties. Window boxes, containers, design refreshes, and reliable maintenance.",
-  openGraph: {
-    title: "Birke Garden Care",
-    description:
-      "Reliable garden care for Nantucket homes and seasonal properties.",
-    url: "https://birkegardens.com",
-    siteName: "Birke Garden Care",
-    locale: "en_US",
-    type: "website",
-  },
+    "Reliable garden care for homes, rentals, and seasonal properties.",
 };
 
 export default function RootLayout({
