@@ -33,29 +33,28 @@ export function Hero() {
 
         <h1
           id="hero-heading"
-          className="mt-6 font-serif font-medium leading-[1.02] text-ivory"
+          className="mt-6 font-serif font-medium leading-[1.04] text-ivory"
           style={{
-            fontSize: "clamp(3rem, 9vw, 6rem)",
+            fontSize: "clamp(2.75rem, 8vw, 5.5rem)",
             textShadow: "0 2px 12px rgba(20,53,32,.75), 0 1px 30px rgba(20,53,32,.5)",
           }}
         >
-          We love what we do.
+          Thoughtful garden care on Nantucket.
         </h1>
 
         <p
           className="mt-6 max-w-[620px] text-[18px] leading-relaxed sm:text-[21px]"
           style={{ color: "#F1EBDD", textShadow: "0 1px 14px rgba(20,53,32,.65)" }}
         >
-          Reliable garden care for Nantucket homes, rentals, and seasonal
-          properties.
+          Reliable care for homes, rentals, and seasonal properties.
         </p>
 
-        <div className="mt-11 flex flex-col gap-4 sm:flex-row sm:gap-5">
-          <a href="#contact" className="btn-hero">
-            Get in touch
+        <div className="mt-11 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-5">
+          <a href="tel:5083743018" className="btn-hero">
+            Call/Text Andrea
           </a>
           <a href="#services" className="btn-hero-outline">
-            See our services
+            See Services
           </a>
         </div>
       </div>
