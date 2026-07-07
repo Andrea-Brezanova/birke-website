@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <section id="home" className="relative min-h-[100svh]" aria-labelledby="hero-heading">
+    <section id="home" className="relative min-h-[100svh] scroll-mt-32" aria-labelledby="hero-heading">
       {/* Background photo */}
       <Image
         src="/IMG_5490.JPG"

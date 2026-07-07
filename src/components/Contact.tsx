@@ -29,7 +29,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="bg-forest px-5 py-20 sm:px-8 sm:py-24"
+      className="scroll-mt-32 bg-forest px-5 py-20 sm:px-8 sm:py-24"
       aria-labelledby="contact-heading"
     >
       <div className="mx-auto grid max-w-[1080px] items-start gap-16 md:grid-cols-[0.8fr_1.2fr]">

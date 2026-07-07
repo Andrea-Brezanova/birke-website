@@ -5,7 +5,7 @@ import { useState } from "react";
 const navLinks = [
   { label: "Home", href: "#home" },
   { label: "Services", href: "#services" },
-  { label: "Our Mission", href: "#seasonal" },
+  { label: "Our Mission", href: "#our-mission" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
@@ -21,10 +21,8 @@ export function Header() {
     <header
       className="fixed inset-x-0 top-0 z-50"
       style={{
-        background:
-          "linear-gradient(180deg, rgba(20,53,32,.55) 0%, rgba(20,53,32,.28) 100%)",
-        backdropFilter: "blur(6px)",
-        WebkitBackdropFilter: "blur(6px)",
+        backgroundColor: "#1E4A2C",
+        borderBottom: "1px solid rgba(251,248,241,.14)",
       }}
     >
       <div className="flex w-full items-center justify-between py-5 pl-3 pr-4 sm:py-7 sm:pl-5 sm:pr-8">

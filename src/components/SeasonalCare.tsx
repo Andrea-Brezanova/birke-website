@@ -1,8 +1,8 @@
 export function SeasonalCare() {
   return (
     <section
-      id="seasonal"
-      className="bg-forest px-6 py-24 text-center sm:px-12"
+      id="our-mission"
+      className="scroll-mt-32 bg-forest px-6 py-24 text-center sm:px-12"
       aria-labelledby="mission-heading"
     >
       <div className="mx-auto max-w-[840px]">
