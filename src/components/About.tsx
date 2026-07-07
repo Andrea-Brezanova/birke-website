@@ -44,7 +44,7 @@ export function About() {
             </h2>
 
             <p className="text-[16px] leading-relaxed md:text-[18px]" style={{ color: "#4C5A47" }}>
-              Birke Garden Care is led by Andrea, a European transplant who has
+              Birke Garden Care is led by Andrea, originally from Europe, who has
               called Nantucket home for many years. Her gardening experience began
               at Bartlett&apos;s Farm and grew through years of hands-on work in local
               Nantucket gardens, including nearly two decades learning from and
@@ -59,7 +59,7 @@ export function About() {
             </p>
 
             <p className="mt-4 text-[16px] leading-relaxed md:text-[18px]" style={{ color: "#4C5A47" }}>
-              She takes pride in what she does and approaches work with
+              She takes pride in her work and approaches every project with
               professionalism, efficiency, and trust.
             </p>
 
