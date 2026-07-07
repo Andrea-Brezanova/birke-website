@@ -33,7 +33,7 @@ export function Header() {
           <img
             src="/birke-wordmark-ivory.png"
             alt="Birke Garden Care"
-            className="h-[64px] w-auto sm:h-[84px]"
+            className="h-[52px] w-auto sm:h-[70px]"
           />
         </a>
 
