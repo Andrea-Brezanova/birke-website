@@ -1,12 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { Logo } from "./Logo";
 
 const navLinks = [
   { label: "Home", href: "#home" },
   { label: "Services", href: "#services" },
-  { label: "Seasonal Care", href: "#seasonal-care" },
+  { label: "Our Mission", href: "#seasonal" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
@@ -19,34 +18,36 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/80 bg-white/90 backdrop-blur-sm">
-      <div className="mx-auto flex max-w-6xl items-center gap-6 px-5 py-3.5 sm:px-8 lg:px-12">
-        <a
-          href="#home"
-          onClick={closeMenu}
-          className="shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest focus-visible:ring-offset-2"
-        >
-          <Logo />
+    <header
+      className="sticky top-0 z-50 bg-forest"
+      style={{ borderBottom: "1px solid rgba(251,248,241,.14)" }}
+    >
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-11">
+        <a href="#home" onClick={closeMenu} className="flex items-center">
+          {/* Wordmark logo — place birke-wordmark-light.png in /public */}
+          <img
+            src="/birke-wordmark-light.png"
+            alt="Birke Garden Care"
+            className="h-[58px] w-auto"
+          />
         </a>
 
-        <nav className="hidden flex-1 items-center justify-end gap-7 md:flex" aria-label="Main navigation">
+        <nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-text-muted transition-colors hover:text-forest"
+              className="text-[12px] uppercase tracking-[0.16em] transition-opacity hover:opacity-70"
+              style={{ color: "#E4EBDD" }}
             >
               {link.label}
             </a>
           ))}
-          <a href="tel:5083743018" className="btn-header">
-            Call/Text
-          </a>
         </nav>
 
         <button
           type="button"
-          className="ml-auto flex min-h-11 min-w-11 items-center justify-center rounded-lg text-forest md:hidden"
+          className="flex min-h-11 min-w-11 items-center justify-center text-ivory md:hidden"
           aria-expanded={menuOpen}
           aria-controls="mobile-nav"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
@@ -73,26 +74,23 @@ export function Header() {
       {menuOpen && (
         <nav
           id="mobile-nav"
-          className="border-t border-border bg-white px-5 py-4 md:hidden"
+          className="border-t px-5 py-4 md:hidden"
+          style={{ borderColor: "rgba(251,248,241,.14)" }}
           aria-label="Mobile navigation"
         >
-          <ul className="flex flex-col gap-1">
+          <ul className="flex flex-col">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
                   onClick={closeMenu}
-                  className="flex min-h-11 items-center text-sm text-text-muted transition-colors hover:text-forest"
+                  className="flex min-h-11 items-center text-[12px] uppercase tracking-[0.16em]"
+                  style={{ color: "#E4EBDD" }}
                 >
                   {link.label}
                 </a>
               </li>
             ))}
-            <li className="pt-2">
-              <a href="tel:5083743018" onClick={closeMenu} className="btn-primary w-full">
-                Call/Text Andrea
-              </a>
-            </li>
           </ul>
         </nav>
       )}
