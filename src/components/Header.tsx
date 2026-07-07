@@ -22,13 +22,13 @@ export function Header() {
       className="sticky top-0 z-50 bg-forest"
       style={{ borderBottom: "1px solid rgba(251,248,241,.14)" }}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-11">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-2.5 sm:px-11">
         <a href="#home" onClick={closeMenu} className="flex items-center">
           {/* Wordmark logo — place birke-wordmark-light.png in /public */}
           <img
             src="/birke-wordmark-light.png"
             alt="Birke Garden Care"
-            className="h-[58px] w-auto"
+            className="h-[76px] w-auto sm:h-[92px]"
           />
         </a>
 
