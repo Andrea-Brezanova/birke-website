@@ -22,13 +22,13 @@ export function Header() {
       className="sticky top-0 z-50 bg-forest"
       style={{ borderBottom: "1px solid rgba(251,248,241,.14)" }}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-2.5 sm:px-11">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2.5 sm:px-6">
         <a href="#home" onClick={closeMenu} className="flex items-center">
-          {/* Wordmark logo — place birke-wordmark-light.png in /public */}
+          {/* White-on-transparent wordmark generated from birke-wordmark-light.png */}
           <img
-            src="/birke-wordmark-light.png"
+            src="/birke-wordmark-white.png"
             alt="Birke Garden Care"
-            className="h-[76px] w-auto sm:h-[92px]"
+            className="h-[64px] w-auto sm:h-[84px]"
           />
         </a>
 
@@ -37,7 +37,7 @@ export function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="text-[12px] uppercase tracking-[0.16em] transition-opacity hover:opacity-70"
+              className="text-[14px] uppercase tracking-[0.16em] transition-opacity hover:opacity-70"
               style={{ color: "#E4EBDD" }}
             >
               {link.label}
