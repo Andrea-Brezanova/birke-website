@@ -50,15 +50,11 @@ export function Hero() {
           properties.
         </p>
 
-        <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:gap-4">
-          <a href="#contact" className="btn-primary">
+        <div className="mt-11 flex flex-col gap-4 sm:flex-row sm:gap-5">
+          <a href="#contact" className="btn-hero">
             Get in touch
           </a>
-          <a
-            href="#services"
-            className="inline-flex min-h-11 items-center justify-center rounded-lg border px-6 py-3 text-sm font-medium tracking-wide transition-colors"
-            style={{ borderColor: "rgba(251,248,241,.6)", color: "#FBF8F1" }}
-          >
+          <a href="#services" className="btn-hero-outline">
             See our services
           </a>
         </div>
