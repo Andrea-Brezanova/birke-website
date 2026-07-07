@@ -32,7 +32,7 @@ export function Hero() {
             textShadow: "0 2px 12px rgba(20,53,32,.75), 0 1px 30px rgba(20,53,32,.5)",
           }}
         >
-          We love what we do.
+          Gardens made beautiful, season after season.
         </h1>
 
         <p
@@ -44,7 +44,7 @@ export function Hero() {
 
         <div className="mt-11 flex justify-center">
           <a href="#contact" className="btn-hero-outline">
-            Schedule Appointment
+            Schedule a Meeting
           </a>
         </div>
       </div>
