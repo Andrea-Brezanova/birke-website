@@ -2,175 +2,124 @@
 
 import { useState } from "react";
 
-type ServiceTab = {
+type Service = {
   id: string;
   label: string;
   title: string;
-  description: string;
-  items: string[];
+  blurb: string;
 };
 
-const serviceTabs: ServiceTab[] = [
+const services: Service[] = [
   {
-    id: "gardens",
-    label: "Gardens",
-    title: "Gardens",
-    description:
-      "Thoughtful care for island gardens — seasonal planting, deadheading, weeding, and keeping beds looking tended throughout the year.",
-    items: [
-      "Seasonal planting and bed care",
-      "Weeding, deadheading, and cleanup",
-      "Plant health and ongoing attention",
-      "Reliable visits for homes and rentals",
-    ],
+    id: "garden-care",
+    label: "Garden Care",
+    title: "Garden Care",
+    blurb:
+      "Hands-on, seasonal attention for established beds and borders — planting, weeding, deadheading, dividing, and the steady care that keeps a garden looking its best from spring through fall.",
   },
   {
     id: "window-boxes",
-    label: "Window Boxes",
-    title: "Window Boxes",
-    description:
-      "Window box planting and seasonal refreshes that welcome you home — or your guests — with color suited to Nantucket properties.",
-    items: [
-      "Seasonal window box planting",
-      "Refreshes before arrival or opening",
-      "Watering, feeding, and upkeep",
-      "Coordinated care for seasonal properties",
-    ],
-  },
-  {
-    id: "containers",
-    label: "Containers",
-    title: "Containers",
-    description:
-      "Container gardens for porches, decks, and entries — cared for with the same attention as in-ground plantings.",
-    items: [
-      "Porch and entry containers",
-      "Deck and patio plantings",
-      "Ongoing maintenance and feeding",
-      "Seasonal replanting when needed",
-    ],
+    label: "Window Boxes & Containers",
+    title: "Window Boxes & Containers",
+    blurb:
+      "Fresh seasonal plantings for window boxes, pots, and containers, swapped as the seasons turn so entries, porches, and terraces always feel welcoming.",
   },
   {
     id: "design",
-    label: "Design",
-    title: "Design",
-    description:
-      "Garden design refreshes with modest updates and an eye for what works on Nantucket — never overdone, always considered.",
-    items: [
-      "Design refreshes for existing gardens",
-      "Thoughtful plant selection",
-      "Updates tailored to your property",
-      "Suited to homes and rentals alike",
-    ],
+    label: "Design & Makeovers",
+    title: "Design & Makeovers",
+    blurb:
+      "Thoughtful refreshes and full makeovers — reworking tired beds, choosing plants suited to Nantucket conditions, and bringing quiet new life to an outdoor space.",
   },
   {
     id: "maintenance",
     label: "Maintenance",
     title: "Maintenance",
-    description:
-      "Dependable ongoing maintenance with clear communication about what's needed and when — ideal for owners away from the island.",
-    items: [
-      "Regular garden maintenance visits",
-      "Efficient, professional work",
-      "Honest updates on garden needs",
-      "Reliable scheduling you can count on",
-    ],
-  },
-  {
-    id: "makeovers",
-    label: "Makeovers",
-    title: "Makeovers",
-    description:
-      "Seasonal makeovers and replanting that give outdoor spaces a fresh, cared-for feeling when it matters most.",
-    items: [
-      "Seasonal garden makeovers",
-      "Replanting and bed refreshes",
-      "Pre-arrival and opening-week prep",
-      "A welcoming look for guests and owners",
-    ],
+    blurb:
+      "Reliable, ongoing upkeep on a schedule that suits your property, so the garden stays tidy, healthy, and cared for throughout the season.",
   },
   {
     id: "coordination",
     label: "Additional Coordination",
     title: "Additional Coordination",
-    description:
-      "When your property needs more than garden care alone, additional services can be arranged with the same reliable approach.",
-    items: [
-      "Lawns, hedges, and related outdoor care may be coordinated when needed",
-      "Additional services arranged as appropriate",
-      "One point of contact for outdoor care",
-      "Coordinated scheduling for seasonal properties",
-    ],
+    blurb:
+      "Lawns, hedges, and related outdoor care may be coordinated when needed — connecting you with trusted help so everything outside your home is looked after.",
   },
 ];
 
 export function ServicesTabs() {
-  const [activeTab, setActiveTab] = useState(serviceTabs[0].id);
-  const active = serviceTabs.find((tab) => tab.id === activeTab) ?? serviceTabs[0];
+  const [activeId, setActiveId] = useState(services[0].id);
+  const active = services.find((s) => s.id === activeId) ?? services[0];
 
   return (
-    <section
-      id="services"
-      className="section-padding bg-white"
-      aria-labelledby="services-heading"
-    >
-      <div className="mx-auto max-w-6xl">
-        <h2 id="services-heading" className="section-heading">
-          Services
-        </h2>
-        <p className="section-subheading">
-          Garden care, containers, design, and maintenance — with additional
-          coordination available when your property needs it.
+    <section id="services" className="bg-ivory px-5 py-20 sm:px-8 sm:py-24">
+      <div className="mx-auto max-w-[1080px]">
+        <p
+          className="text-[13px] uppercase tracking-[0.3em]"
+          style={{ color: "#7A8770" }}
+        >
+          What we do
         </p>
 
-        <div className="mt-10" role="tablist" aria-label="Service categories">
-          <div className="flex flex-wrap gap-2">
-            {serviceTabs.map((tab) => {
-              const isActive = tab.id === activeTab;
-
-              return (
-                <button
-                  key={tab.id}
-                  type="button"
-                  role="tab"
-                  id={`tab-${tab.id}`}
-                  aria-selected={isActive}
-                  aria-controls={`panel-${tab.id}`}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`rounded-full border px-4 py-2 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest focus-visible:ring-offset-2 ${
-                    isActive
-                      ? "border-forest bg-forest text-ivory"
-                      : "border-border bg-ivory text-text-muted hover:border-sage hover:text-forest"
-                  }`}
-                >
-                  {tab.label}
-                </button>
-              );
-            })}
-          </div>
+        {/* Tab bar — underline style */}
+        <div
+          className="mt-6 flex gap-6 overflow-x-auto border-b [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          style={{ borderColor: "rgba(30,74,44,.16)" }}
+          role="tablist"
+          aria-label="Service categories"
+        >
+          {services.map((service) => {
+            const isActive = service.id === activeId;
+            return (
+              <button
+                key={service.id}
+                type="button"
+                role="tab"
+                id={`tab-${service.id}`}
+                aria-selected={isActive}
+                aria-controls={`panel-${service.id}`}
+                onClick={() => setActiveId(service.id)}
+                className="shrink-0 whitespace-nowrap pb-3 text-sm transition-colors focus-visible:outline-none"
+                style={{
+                  color: isActive ? "#1E4A2C" : "#7A8770",
+                  fontWeight: isActive ? 600 : 400,
+                  borderBottom: isActive
+                    ? "2px solid #1E4A2C"
+                    : "2px solid transparent",
+                  marginBottom: "-1px",
+                }}
+              >
+                {service.label}
+              </button>
+            );
+          })}
         </div>
 
+        {/* Content grid */}
         <div
           role="tabpanel"
           id={`panel-${active.id}`}
           aria-labelledby={`tab-${active.id}`}
-          className="card mt-8 p-6 sm:p-8"
+          className="mt-12 grid items-center gap-12 md:grid-cols-2"
         >
-          <h3 className="font-serif text-2xl font-medium text-forest">{active.title}</h3>
-          <p className="mt-3 max-w-2xl leading-relaxed text-text-muted">
-            {active.description}
-          </p>
-          <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-            {active.items.map((item) => (
-              <li key={item} className="flex gap-3 text-sm text-forest/80">
-                <span
-                  className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-sage"
-                  aria-hidden="true"
-                />
-                <span className="leading-relaxed">{item}</span>
-              </li>
-            ))}
-          </ul>
+          <div>
+            <h3
+              className="font-serif text-[34px] font-medium leading-tight"
+              style={{ color: "#1E4A2C" }}
+            >
+              {active.title}
+            </h3>
+            <p className="mt-5 text-[16px] leading-relaxed" style={{ color: "#4C5A47" }}>
+              {active.blurb}
+            </p>
+          </div>
+
+          {/* Image placeholder */}
+          <div
+            className="img-placeholder w-full"
+            style={{ height: "404px", borderRadius: "14px" }}
+            aria-hidden="true"
+          />
         </div>
       </div>
     </section>
