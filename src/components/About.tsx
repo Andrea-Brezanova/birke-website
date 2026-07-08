@@ -66,10 +66,9 @@ export function About() {
               className="mt-6 border-l-2 pl-4 text-[15px] italic leading-relaxed md:text-[16px]"
               style={{ borderColor: "rgba(30,74,44,.22)", color: "#4C5A47" }}
             >
-              &ldquo;...! I have great memories from our times together-all while
-              working-which is probably not how many people experience work:) You
-              are one of the best workers I know and have such a pleasant
-              disposition- ... should be so happy to have you!!&rdquo;
+              &ldquo;I have great memories of our time working together. You are one of
+              the best workers I know and have such a pleasant disposition.
+              Anyone would be lucky to have you.&rdquo;
             </blockquote>
             <p className="mt-2 text-[14px]" style={{ color: "#7A8770" }}>
               — Bridget Montgomery

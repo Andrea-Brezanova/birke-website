@@ -83,7 +83,6 @@ export function Header() {
     >
       <div className="relative flex w-full items-center py-3 pl-6 pr-4 sm:py-4 sm:pl-8 sm:pr-6">
         <a href="#home" onClick={closeMenu} className="flex items-center">
-          {/* Logo swaps based on navbar background for consistent contrast */}
           <img
             src={isHeroTop ? "/birke-wordmark-ivory.png" : "/birke-wordmark-forest.png"}
             alt="Birke Garden Care"
