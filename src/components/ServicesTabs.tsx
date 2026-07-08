@@ -78,16 +78,11 @@ const services: Service[] = [
   },
   {
     id: "coordination",
-    label: "Additional Services",
-    title: "Additional Services",
+    label: "Lawn & Privet Care",
+    title: "Lawn & Privet Care",
     description:
-      "Lawns, hedges, and related outdoor care may be coordinated when needed — connecting you with trusted help so everything outside your home is looked after.",
+      "We can help coordinate lawn care, privet trimming, and related outdoor services upon request. Some services may be outsourced to trusted professionals for your convenience.",
     imageSrc: "/lawn.jpeg",
-    bullets: [
-      "Professional design support available",
-      "Lawn and hedge care coordination",
-      "Trusted help for larger outdoor projects",
-    ],
   },
 ];
 
