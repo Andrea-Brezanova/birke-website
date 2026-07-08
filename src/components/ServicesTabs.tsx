@@ -130,6 +130,7 @@ export function ServicesTabs() {
                     ? "2px solid #1E4A2C"
                     : "2px solid transparent",
                   marginBottom: "-1px",
+                  transform: service.id === "installations" ? "translateX(8px)" : undefined,
                 }}
               >
                 {service.label}
