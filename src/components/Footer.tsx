@@ -25,7 +25,7 @@ export function Footer() {
           Opportunities
         </p>
         <p className="mt-1.5 text-center text-[12px]" style={{ color: "#7A8770" }}>
-          Branding, website and logo design by Andrea
+          Branding, website and logo design made with ❤️ on Nantucket by Andrea
         </p>
       </div>
     </footer>

@@ -12,14 +12,7 @@ export function About() {
       aria-labelledby="about-heading"
     >
       <div className="mx-auto min-h-[calc(100svh-88px)] max-w-[1080px]">
-        <p
-          className="text-center text-[13px] uppercase tracking-[0.3em]"
-          style={{ color: "#7A8770" }}
-        >
-          About
-        </p>
-
-        <div className="mt-7 grid items-center gap-8 md:mt-8 md:grid-cols-[1fr_1fr] md:gap-12">
+        <div className="grid items-center gap-8 md:mt-8 md:grid-cols-[1fr_1fr] md:gap-12">
           <div className="order-1 md:order-none">
           {imageMissing ? (
             <div
@@ -43,23 +36,29 @@ export function About() {
               About Andrea
             </h2>
 
-            <p className="text-[16px] leading-relaxed md:text-[18px]" style={{ color: "#4C5A47" }}>
-              Birke Garden Care is led by Andrea, originally from Europe, who has
-              called Nantucket home for many years. Her gardening experience began
-              at Bartlett&apos;s Farm and grew through years of hands-on work in local
-              Nantucket gardens, including nearly two decades learning from and
-              working alongside Bridget of Champoux Landscapes.
+            <p className="text-[15px] leading-relaxed md:text-[16px]" style={{ color: "#4C5A47" }}>
+              Birke Garden Care is rooted in a lifelong love of flowers. What
+              began in childhood and continued with a job at Bartlett&apos;s Farm
+              grew into a long and rewarding career caring for Nantucket
+              gardens.
             </p>
 
-            <p className="mt-4 text-[16px] leading-relaxed md:text-[18px]" style={{ color: "#4C5A47" }}>
-              With more than 20 years of on-island experience, Andrea brings a
-              practical eye, steady attention to detail, and a personal
-              understanding of what Nantucket homes, rentals, and seasonal
-              properties need throughout the year.
+            <p className="mt-4 text-[15px] leading-relaxed md:text-[16px]" style={{ color: "#4C5A47" }}>
+              Years of hands-on work in local gardens - including nearly two
+              decades learning from and working alongside Bridget of Champoux
+              Landscapes - shaped the practical, thoughtful approach behind
+              Birke Garden Care today.
             </p>
 
-            <p className="mt-4 text-[16px] leading-relaxed md:text-[18px]" style={{ color: "#4C5A47" }}>
-              She takes pride in her work and approaches every project with
+            <p className="mt-4 text-[15px] leading-relaxed md:text-[16px]" style={{ color: "#4C5A47" }}>
+              With more than 20 years of on-island experience, we bring a
+              steady eye for detail and a personal understanding of what
+              Nantucket homes, rentals, and seasonal properties need throughout
+              the year.
+            </p>
+
+            <p className="mt-4 text-[15px] leading-relaxed md:text-[16px]" style={{ color: "#4C5A47" }}>
+              We take pride in our work and approach every project with
               professionalism, efficiency, and trust.
             </p>
 

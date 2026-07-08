@@ -83,6 +83,11 @@ const services: Service[] = [
     description:
       "We can help coordinate lawn care, privet trimming, and related outdoor services upon request. Some services may be outsourced to trusted professionals for your convenience.",
     imageSrc: "/lawn.jpeg",
+    bullets: [
+      "Professional design support available",
+      "Lawn and hedge care coordination",
+      "Trusted help for larger outdoor projects",
+    ],
   },
 ];
 
@@ -99,16 +104,9 @@ export function ServicesTabs() {
       className="scroll-mt-[88px] bg-ivory px-5 pb-10 pt-10 sm:px-8 sm:pb-12 sm:pt-12"
     >
       <div className="mx-auto flex min-h-[calc(100svh-88px)] max-w-[1080px] flex-col">
-        <p
-          className="text-center text-[13px] uppercase tracking-[0.3em]"
-          style={{ color: "#7A8770" }}
-        >
-          What we do
-        </p>
-
         {/* Tab bar — underline style */}
         <div
-          className="mt-6 flex gap-6 overflow-x-auto border-b [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="flex gap-6 overflow-x-auto border-b [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:justify-between md:gap-3"
           style={{ borderColor: "rgba(30,74,44,.16)" }}
           role="tablist"
           aria-label="Service categories"
@@ -124,7 +122,7 @@ export function ServicesTabs() {
                 aria-selected={isActive}
                 aria-controls={`panel-${service.id}`}
                 onClick={() => setActiveId(service.id)}
-                className="shrink-0 whitespace-nowrap pb-3 text-[15px] sm:text-[16px] transition-colors focus-visible:outline-none"
+                className="shrink-0 whitespace-nowrap pb-3 text-[15px] sm:text-[16px] transition-colors focus-visible:outline-none md:flex-1 md:text-center"
                 style={{
                   color: isActive ? "#1E4A2C" : "#7A8770",
                   fontWeight: isActive ? 600 : 400,

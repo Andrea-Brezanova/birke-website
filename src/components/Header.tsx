@@ -13,6 +13,7 @@ const navLinks = [
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isHeroTop, setIsHeroTop] = useState(true);
+  const [activeHref, setActiveHref] = useState("#home");
 
   function closeMenu() {
     setMenuOpen(false);
@@ -20,19 +21,59 @@ export function Header() {
 
   useEffect(() => {
     function onScroll() {
-      setIsHeroTop(window.scrollY < 40);
+      const heroSection = document.getElementById("home");
+      if (!heroSection) {
+        setIsHeroTop(window.scrollY < 40);
+        return;
+      }
+
+      const heroBottom = heroSection.getBoundingClientRect().bottom;
+      setIsHeroTop(heroBottom > 88);
     }
 
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    const sections = navLinks
+      .map((link) => document.querySelector(link.href))
+      .filter((section): section is HTMLElement => section instanceof HTMLElement);
+
+    if (!sections.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        if (visible.length === 0) return;
+
+        const activeId = `#${visible[0].target.id}`;
+        setActiveHref(activeId);
+      },
+      {
+        // Track the section occupying the center of the viewport.
+        rootMargin: "-40% 0px -45% 0px",
+        threshold: [0.1, 0.25, 0.5, 0.75],
+      },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
   }, []);
 
   return (
     <header
       className="fixed inset-x-0 top-0 z-50"
       style={{
-        backgroundColor: isHeroTop ? "rgba(20,53,32,0.46)" : "#FBF8F1",
+        backgroundColor: isHeroTop ? "rgba(104,110,109,0.46)" : "#FBF8F1",
         borderBottom: isHeroTop
           ? "1px solid rgba(251,248,241,.14)"
           : "1px solid rgba(30,74,44,.14)",
@@ -59,7 +100,12 @@ export function Header() {
               key={link.href}
               href={link.href}
               className="text-[14px] uppercase tracking-[0.12em] transition-opacity hover:opacity-70"
-              style={{ color: isHeroTop ? "#FBF8F1" : "#1E4A2C" }}
+              style={{
+                color: isHeroTop ? "#FBF8F1" : "#1E4A2C",
+                fontWeight: activeHref === link.href ? 600 : 400,
+                textDecoration: activeHref === link.href ? "underline" : "none",
+                textUnderlineOffset: activeHref === link.href ? "6px" : undefined,
+              }}
             >
               {link.label}
             </a>
@@ -110,7 +156,12 @@ export function Header() {
                   href={link.href}
                   onClick={closeMenu}
                   className="flex min-h-11 items-center text-[14px] uppercase tracking-[0.16em]"
-                  style={{ color: "#1E4A2C" }}
+                  style={{
+                    color: "#1E4A2C",
+                    fontWeight: activeHref === link.href ? 600 : 400,
+                    textDecoration: activeHref === link.href ? "underline" : "none",
+                    textUnderlineOffset: activeHref === link.href ? "6px" : undefined,
+                  }}
                 >
                   {link.label}
                 </a>

@@ -73,14 +73,7 @@ export function Contact() {
       aria-labelledby="contact-heading"
     >
       <div className="mx-auto min-h-[calc(100svh-88px)] max-w-[1080px]">
-        <p
-          className="text-center text-[13px] uppercase tracking-[0.3em]"
-          style={{ color: "#9DB08F" }}
-        >
-          Get in touch
-        </p>
-
-        <div className="mt-5 grid content-center items-start gap-12 md:mt-6 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
+        <div className="grid content-center items-start gap-12 md:mt-6 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
           {/* Left column */}
           <div>
             <h3
