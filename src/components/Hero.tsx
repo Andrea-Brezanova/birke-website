@@ -28,11 +28,12 @@ export function Hero() {
           id="hero-heading"
           className="font-serif font-medium leading-[1.02] text-ivory"
           style={{
-            fontSize: "clamp(3rem, 9vw, 6rem)",
+            fontSize: "clamp(2.2rem, 8vw, 6rem)",
             textShadow: "0 2px 12px rgba(20,53,32,.75), 0 1px 30px rgba(20,53,32,.5)",
           }}
         >
-          Gardens made beautiful, season after season.
+          <span className="block whitespace-nowrap">Gardens made beautiful,</span>
+          <span className="block whitespace-nowrap">season after season.</span>
         </h1>
 
         <p
