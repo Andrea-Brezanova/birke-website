@@ -12,33 +12,11 @@ const navLinks = [
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isHeroTop, setIsHeroTop] = useState(true);
   const [activeHref, setActiveHref] = useState("#home");
 
   function closeMenu() {
     setMenuOpen(false);
   }
-
-  useEffect(() => {
-    function onScroll() {
-      const heroSection = document.getElementById("home");
-      if (!heroSection) {
-        setIsHeroTop(window.scrollY < 40);
-        return;
-      }
-
-      const heroBottom = heroSection.getBoundingClientRect().bottom;
-      setIsHeroTop(heroBottom > 88);
-    }
-
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-    };
-  }, []);
 
   useEffect(() => {
     const sections = navLinks
@@ -71,27 +49,23 @@ export function Header() {
 
   return (
     <header
-      className="fixed inset-x-0 top-0 z-50"
+      className="sticky inset-x-0 top-0 z-50"
       style={{
-        backgroundColor: isHeroTop ? "rgba(104,110,109,0.46)" : "#FBF8F1",
-        borderBottom: isHeroTop
-          ? "1px solid rgba(251,248,241,.14)"
-          : "1px solid rgba(30,74,44,.14)",
-        backdropFilter: "blur(8px)",
-        WebkitBackdropFilter: "blur(8px)",
+        backgroundColor: "rgba(251,248,241,.94)",
+        borderBottom: "1px solid rgba(30,74,44,.14)",
       }}
     >
-      <div className="relative flex w-full items-center py-3 pl-6 pr-4 sm:py-4 sm:pl-8 sm:pr-6">
+      <div className="relative flex w-full items-center justify-between px-6 py-3 sm:px-8 sm:py-4">
         <a href="#home" onClick={closeMenu} className="flex items-center">
           <img
-            src={isHeroTop ? "/birke-wordmark-ivory.png" : "/birke-wordmark-forest.png"}
+            src="/birke-wordmark-forest.png"
             alt="Birke Garden Care"
             className="h-[42px] w-auto sm:h-[56px]"
           />
         </a>
 
         <nav
-          className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-5 md:flex"
+          className="ml-auto hidden items-center gap-5 md:flex"
           aria-label="Main navigation"
         >
           {navLinks.map((link) => (
@@ -100,7 +74,7 @@ export function Header() {
               href={link.href}
               className="text-[14px] uppercase tracking-[0.12em] transition-opacity hover:opacity-70"
               style={{
-                color: isHeroTop ? "#FBF8F1" : "#1E4A2C",
+                color: "#1E4A2C",
                 fontWeight: activeHref === link.href ? 600 : 400,
                 textDecoration: activeHref === link.href ? "underline" : "none",
                 textUnderlineOffset: activeHref === link.href ? "6px" : undefined,
@@ -114,7 +88,7 @@ export function Header() {
         <button
           type="button"
           className="ml-auto flex min-h-11 min-w-11 items-center justify-center md:hidden"
-          style={{ color: isHeroTop ? "#FBF8F1" : "#1E4A2C" }}
+          style={{ color: "#1E4A2C" }}
           aria-expanded={menuOpen}
           aria-controls="mobile-nav"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
@@ -144,7 +118,7 @@ export function Header() {
           className="border-t px-5 py-4 md:hidden"
           style={{
             borderColor: "rgba(30,74,44,.14)",
-            backgroundColor: "rgba(251,248,241,.98)",
+            backgroundColor: "rgba(251,248,241,.94)",
           }}
           aria-label="Mobile navigation"
         >

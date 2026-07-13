@@ -2,51 +2,63 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <section id="home" className="relative min-h-[100svh]" aria-labelledby="hero-heading">
-      {/* Background photo */}
+    <section
+      id="home"
+      className="relative overflow-hidden"
+      style={{ minHeight: "max(680px, calc(100svh - 88px))" }}
+      aria-labelledby="hero-heading"
+    >
       <Image
-        src="/IMG_5490.JPG"
-        alt="Pink garden flowers in bloom on Nantucket"
+        src="/hero-lilies.jpg"
+        alt="Pink and white lilies in a Nantucket garden"
         fill
         priority
         sizes="100vw"
         className="object-cover"
+        style={{ objectPosition: "0% 35%" }}
       />
 
-      {/* Overlay for legibility */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(20,53,32,.12) 0%, rgba(20,53,32,.16) 45%, rgba(20,53,32,.40) 100%)",
+            "linear-gradient(180deg, rgba(20,53,32,0.08) 0%, rgba(20,53,32,0.12) 40%, rgba(15,38,23,0.82) 100%)",
         }}
         aria-hidden="true"
       />
 
-      <div className="relative mx-auto flex min-h-[100svh] max-w-4xl flex-col items-center justify-end px-5 pb-[14vh] text-center">
+      <div
+        className="relative z-10 mx-auto flex w-full items-end justify-center text-center"
+        style={{ minHeight: "max(680px, calc(100svh - 88px))", padding: "64px 48px 76px" }}
+      >
+        <div style={{ maxWidth: "820px", color: "#FBF8F1" }}>
         <h1
           id="hero-heading"
-          className="font-serif font-medium leading-[1.02] text-ivory"
+          className="font-serif"
           style={{
-            fontSize: "clamp(2.2rem, 8vw, 6rem)",
-            textShadow: "0 2px 12px rgba(20,53,32,.75), 0 1px 30px rgba(20,53,32,.5)",
+            fontWeight: 500,
+            fontSize: "56px",
+            lineHeight: 1.08,
+            letterSpacing: "-0.01em",
+            marginBottom: "16px",
+            textShadow: "0 2px 20px rgba(0,0,0,0.25)",
           }}
         >
-          <span className="block whitespace-nowrap">Gardens made beautiful,</span>
-          <span className="block whitespace-nowrap">season after season.</span>
+          Gardens made beautiful, season after season.
         </h1>
 
         <p
-          className="mt-6 max-w-[620px] text-[18px] leading-relaxed sm:text-[21px]"
-          style={{ color: "#F1EBDD", textShadow: "0 1px 14px rgba(20,53,32,.65)" }}
+          className="mx-auto"
+          style={{
+            fontSize: "19px",
+            lineHeight: 1.5,
+            color: "#E9EFE3",
+            maxWidth: "560px",
+            margin: "0 auto",
+          }}
         >
-          Thoughtful gardening for Nantucket homes and rentals.
+          Taking care of Nantucket gardens since 2005.
         </p>
-
-        <div className="mt-11 flex justify-center">
-          <a href="#contact" className="btn-hero">
-            Schedule a Meeting
-          </a>
         </div>
       </div>
     </section>

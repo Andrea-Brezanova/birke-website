@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --color-ivory: #fbf8f1;
+  --color-ivory: rgba(251, 248, 241, 0.94);
   --color-cream: #f1ebdd;
   --color-forest: #1e4a2c;
   --color-forest-deep: #143520;
@@ -12,7 +12,7 @@
 }
 
 @theme inline {
-  --color-ivory: #fbf8f1;
+  --color-ivory: rgba(251, 248, 241, 0.94);
   --color-cream: #f1ebdd;
   --color-forest: #1e4a2c;
   --color-forest-deep: #143520;
@@ -67,7 +67,7 @@ a {
     padding: 0 2.25rem;
     font-size: 15px;
     letter-spacing: 0.06em;
-    background-color: #fbf8f1;
+    background-color: rgba(251, 248, 241, 0.94);
     color: #1e4a2c;
     box-shadow: 0 10px 30px -12px rgba(20, 53, 32, 0.35);
   }
