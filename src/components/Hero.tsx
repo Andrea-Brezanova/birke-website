@@ -34,26 +34,29 @@ export function Hero() {
         <div style={{ maxWidth: "820px", color: "#FBF8F1" }}>
         <h1
           id="hero-heading"
-          className="font-serif"
+          className="mx-auto max-w-[95%] font-serif md:max-w-none md:whitespace-nowrap"
           style={{
             fontWeight: 500,
-            fontSize: "56px",
+            fontSize: "clamp(1.9rem, 5.6vw, 56px)",
             lineHeight: 1.08,
             letterSpacing: "-0.01em",
             marginBottom: "16px",
             textShadow: "0 2px 20px rgba(0,0,0,0.25)",
           }}
         >
-          Gardens made beautiful, season after season.
+          <span className="block md:hidden">Gardens made beautiful,</span>
+          <span className="block md:hidden">season after season.</span>
+          <span className="hidden md:block">
+            Gardens made beautiful, season after season.
+          </span>
         </h1>
 
         <p
-          className="mx-auto"
+          className="mx-auto max-w-[95%] md:max-w-none md:whitespace-nowrap"
           style={{
-            fontSize: "19px",
+            fontSize: "clamp(1rem, 2.3vw, 19px)",
             lineHeight: 1.5,
             color: "#E9EFE3",
-            maxWidth: "560px",
             margin: "0 auto",
           }}
         >

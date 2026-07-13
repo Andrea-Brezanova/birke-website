@@ -41,7 +41,7 @@ export function ServicesTeaser() {
               <img
                 src={preview.imageSrc}
                 alt={preview.title}
-                className="h-[170px] w-[170px] rounded-full object-cover"
+                className="h-[210px] w-[210px] rounded-full object-cover"
               />
               <p className="mt-4 text-[18px] font-serif leading-tight" style={{ color: "#1E4A2C" }}>
                 {preview.title}
