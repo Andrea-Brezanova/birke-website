@@ -26,11 +26,11 @@ const services: Service[] = [
   },
   {
     id: "garden-care",
-    label: "Full Garden Care",
-    title: "Full Garden Care",
+    label: "Garden Care",
+    title: "Garden Care",
     description:
       "Hands-on, seasonal attention for established beds and borders — from cleanups and planting to the steady upkeep that keeps a garden looking its best from spring through fall.",
-    imageSrc: "/daisies.JPG",
+    imageSrc: "/garden-care-daisies.png",
     bullets: [
       "Spring and fall cleanups and mulching",
       "Perennial and annual planting",
@@ -39,11 +39,11 @@ const services: Service[] = [
   },
   {
     id: "maintenance",
-    label: "Greenscapes Maintenance",
-    title: "Greenscapes Maintenance",
+    label: "Maintenance",
+    title: "Maintenance",
     description:
       "Reliable, ongoing upkeep on a schedule that suits your property, so the garden stays tidy, healthy, and cared for throughout the season.",
-    imageSrc: "/greenscapes-hydrangea.png",
+    imageSrc: "/maintenance.JPG",
     bullets: [
       "Recurring weekly, bi-weekly or monthly care",
       "Monitoring plant health and seasonal needs",
@@ -81,7 +81,7 @@ const services: Service[] = [
     label: "Lawn & Privet Care",
     title: "Lawn & Privet Care",
     description:
-      "We can help coordinate lawn care, privet trimming, and related outdoor services upon request. Some services may be outsourced to trusted professionals for your convenience.",
+      "We can coordinate lawn care, privet trimming, and other outdoor services as part of your property care. We partner with trusted local professionals to ensure every aspect of your landscape is well looked after.",
     imageSrc: "/lawn.jpeg",
     bullets: [
       "Professional design support available",
@@ -175,7 +175,7 @@ export function ServicesTabs() {
             ) : null}
           </div>
 
-          <div className="relative h-[340px] overflow-hidden rounded-[16px] sm:h-[420px] md:h-[520px]">
+          <div className="relative h-[280px] overflow-hidden rounded-3xl sm:h-[320px] md:h-[340px] lg:h-[360px]">
             {primaryFailed ? (
               <div
                 className="flex h-full w-full items-center justify-center text-center text-[17px]"
@@ -190,7 +190,7 @@ export function ServicesTabs() {
               <img
                 src={active.imageSrc}
                 alt={`${active.title} service`}
-                className="h-full w-full object-contain"
+                className="h-full w-full object-cover"
                 onError={() =>
                   setFailedImages((prev) => ({
                     ...prev,
