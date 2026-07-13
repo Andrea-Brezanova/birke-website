@@ -144,9 +144,9 @@ export function ServicesTabs() {
           role="tabpanel"
           id={`panel-${active.id}`}
           aria-labelledby={`tab-${active.id}`}
-          className="mt-7 grid items-center gap-8 md:mt-8 md:grid-cols-[1fr_1fr] md:gap-12"
+          className="mt-10 grid items-start gap-8 md:mt-12 md:grid-cols-[1fr_1fr] md:gap-12"
         >
-          <div className="md:self-center">
+          <div>
             <h3
               className="font-serif text-[34px] font-medium leading-tight md:text-[42px]"
               style={{ color: "#1E4A2C" }}
