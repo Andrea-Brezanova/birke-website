@@ -1,26 +1,34 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Services", href: "#services" },
-  { label: "Our Mission", href: "#our-mission" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/#home", sectionId: "home" },
+  { label: "Services", href: "/services", sectionId: null },
+  { label: "Our Mission", href: "/#our-mission", sectionId: "our-mission" },
+  { label: "About", href: "/#about", sectionId: "about" },
+  { label: "Contact", href: "/#contact", sectionId: "contact" },
 ];
 
 export function Header() {
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeHref, setActiveHref] = useState("#home");
+  const [activeHref, setActiveHref] = useState("/#home");
 
   function closeMenu() {
     setMenuOpen(false);
   }
 
   useEffect(() => {
-    const sections = navLinks
-      .map((link) => document.querySelector(link.href))
+    if (pathname === "/services") {
+      setActiveHref("/services");
+      return;
+    }
+
+    const homeSectionLinks = navLinks.filter((link) => link.sectionId);
+    const sections = homeSectionLinks
+      .map((link) => document.getElementById(link.sectionId ?? ""))
       .filter((section): section is HTMLElement => section instanceof HTMLElement);
 
     if (!sections.length) return;
@@ -33,7 +41,7 @@ export function Header() {
 
         if (visible.length === 0) return;
 
-        const activeId = `#${visible[0].target.id}`;
+        const activeId = `/#${visible[0].target.id}`;
         setActiveHref(activeId);
       },
       {
@@ -45,7 +53,7 @@ export function Header() {
 
     sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
 
   return (
     <header
@@ -56,7 +64,7 @@ export function Header() {
       }}
     >
       <div className="relative flex w-full items-center justify-between px-6 py-3 sm:px-8 sm:py-4">
-        <a href="#home" onClick={closeMenu} className="flex items-center">
+        <a href="/#home" onClick={closeMenu} className="flex items-center">
           <img
             src="/birke-wordmark-forest.png"
             alt="Birke Garden Care"
