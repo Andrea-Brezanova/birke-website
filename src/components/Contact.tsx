@@ -88,7 +88,7 @@ export function Contact() {
           className="text-center text-[13px] uppercase tracking-[0.32em]"
           style={{ color: "#9DB08F" }}
         >
-          Get a quote
+          Contact us
         </p>
         <div className="grid content-center items-start gap-12 md:mt-6 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
           {/* Left column */}
