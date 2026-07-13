@@ -8,10 +8,7 @@ export function Footer() {
       }}
     >
       <div className="mx-auto max-w-[1080px]">
-        <div
-          className="flex flex-col items-center pb-4"
-          style={{ borderBottom: "1px solid rgba(122,135,112,.24)" }}
-        >
+        <div className="flex flex-col items-center pb-4">
           <img
             src="/birke-wordmark-forest.png"
             alt="Birke Garden Care"
@@ -20,12 +17,22 @@ export function Footer() {
         </div>
 
         <p className="mt-4 text-center text-[13px]" style={{ color: "#1E4A2C" }}>
-          © Copyright 2026 &nbsp;|&nbsp; birkegardens.com &nbsp;|&nbsp; All Rights
-          Reserved. &nbsp;|&nbsp; Contact &nbsp;|&nbsp; Testimonials &nbsp;|&nbsp; Job
-          Opportunities
+          © 2026 Birke Garden Care. All rights reserved.
         </p>
         <p className="mt-1.5 text-center text-[12px]" style={{ color: "#7A8770" }}>
-          Branding, website and logo design made with ❤️ on Nantucket by Andrea
+          Nantucket, Massachusetts
+        </p>
+        <p className="mt-1.5 text-center text-[12px]">
+          <a
+            href="/privacy-policy"
+            className="transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7A8770] focus-visible:ring-offset-2"
+            style={{ color: "#1E4A2C" }}
+          >
+            Privacy Policy
+          </a>
+        </p>
+        <p className="mt-1.5 text-center text-[12px]" style={{ color: "#7A8770" }}>
+          Created with ❤️ on Nantucket by Andrea.
         </p>
       </div>
     </footer>

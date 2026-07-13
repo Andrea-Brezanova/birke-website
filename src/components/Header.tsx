@@ -4,17 +4,17 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const navLinks = [
-  { label: "Home", href: "/#home", sectionId: "home" },
+  { label: "Home", href: "/", sectionId: "home" },
   { label: "Services", href: "/services", sectionId: null },
   { label: "Our Mission", href: "/#our-mission", sectionId: "our-mission" },
-  { label: "About", href: "/#about", sectionId: "about" },
+  { label: "About", href: "/about", sectionId: null },
   { label: "Contact", href: "/#contact", sectionId: "contact" },
 ];
 
 export function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeHref, setActiveHref] = useState("/#home");
+  const [activeHref, setActiveHref] = useState("/");
 
   function closeMenu() {
     setMenuOpen(false);
@@ -23,6 +23,11 @@ export function Header() {
   useEffect(() => {
     if (pathname === "/services") {
       setActiveHref("/services");
+      return;
+    }
+
+    if (pathname === "/about") {
+      setActiveHref("/about");
       return;
     }
 
@@ -41,7 +46,8 @@ export function Header() {
 
         if (visible.length === 0) return;
 
-        const activeId = `/#${visible[0].target.id}`;
+        const activeId =
+          visible[0].target.id === "home" ? "/" : `/#${visible[0].target.id}`;
         setActiveHref(activeId);
       },
       {
@@ -59,12 +65,12 @@ export function Header() {
     <header
       className="sticky inset-x-0 top-0 z-50"
       style={{
-        backgroundColor: "rgba(251,248,241,.94)",
+        backgroundColor: "#FBF8F1",
         borderBottom: "1px solid rgba(30,74,44,.14)",
       }}
     >
       <div className="relative flex w-full items-center justify-between px-6 py-3 sm:px-8 sm:py-4">
-        <a href="/#home" onClick={closeMenu} className="flex items-center">
+        <a href="/" onClick={closeMenu} className="flex items-center">
           <img
             src="/birke-wordmark-forest.png"
             alt="Birke Garden Care"
@@ -126,7 +132,7 @@ export function Header() {
           className="border-t px-5 py-4 md:hidden"
           style={{
             borderColor: "rgba(30,74,44,.14)",
-            backgroundColor: "rgba(251,248,241,.94)",
+            backgroundColor: "#FBF8F1",
           }}
           aria-label="Mobile navigation"
         >

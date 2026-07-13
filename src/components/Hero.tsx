@@ -22,7 +22,7 @@ export function Hero() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(20,53,32,0.08) 0%, rgba(20,53,32,0.12) 40%, rgba(15,38,23,0.82) 100%)",
+            "linear-gradient(180deg, rgba(20,53,32,0.02) 0%, rgba(20,53,32,0.06) 45%, rgba(15,38,23,0.80) 100%)",
         }}
         aria-hidden="true"
       />

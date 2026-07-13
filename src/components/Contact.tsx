@@ -5,17 +5,28 @@ import { useState, type ReactNode } from "react";
 const labelStyle = { color: "#FBF8F1" as const };
 const requiredStyle = { color: "#9DB08F" as const };
 
-function FieldLabel({ children }: { children: ReactNode }) {
+function FieldLabel({
+  children,
+  required = false,
+}: {
+  children: ReactNode;
+  required?: boolean;
+}) {
   return (
     <span className="mb-1.5 block text-[13px]" style={labelStyle}>
-      {children}{" "}
-      <span style={requiredStyle}>(required)</span>
+      {children}
+      {required ? (
+        <>
+          {" "}
+          <span style={requiredStyle}>(required)</span>
+        </>
+      ) : null}
     </span>
   );
 }
 
 const inputClass =
-  "w-full rounded-md px-3.5 py-3 text-[15px] outline-none focus:ring-2 focus:ring-[#9DB08F]";
+  "w-full rounded-md px-3.5 py-3 text-[15px] text-[#26301F] placeholder:text-[#6E7A66] placeholder:opacity-100 outline-none focus:ring-2 focus:ring-[#9DB08F]";
 const inputStyle = { backgroundColor: "#FBF8F1", color: "#26301F" as const };
 
 export function Contact() {
@@ -73,6 +84,12 @@ export function Contact() {
       aria-labelledby="contact-heading"
     >
       <div className="mx-auto min-h-[calc(100svh-88px)] max-w-[1080px]">
+        <p
+          className="text-center text-[13px] uppercase tracking-[0.32em]"
+          style={{ color: "#9DB08F" }}
+        >
+          Get a quote
+        </p>
         <div className="grid content-center items-start gap-12 md:mt-6 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
           {/* Left column */}
           <div>
@@ -111,7 +128,7 @@ export function Contact() {
               </div>
 
               {/* QR card */}
-              <div className="flex flex-col items-center pt-2">
+              <div className="flex flex-col items-start pt-2">
                 <div
                   className="flex items-center justify-center"
                   style={{ backgroundColor: "#FBF8F1", padding: "12px", borderRadius: "12px" }}
@@ -159,27 +176,62 @@ export function Contact() {
               <div className="grid gap-5 sm:grid-cols-2">
                 <label className="block">
                   <FieldLabel>First Name</FieldLabel>
-                  <input type="text" name="firstName" required className={inputClass} style={inputStyle} />
+                  <input
+                    type="text"
+                    name="firstName"
+                    required
+                    placeholder="First name"
+                    className={inputClass}
+                    style={inputStyle}
+                  />
                 </label>
                 <label className="block">
                   <FieldLabel>Last Name</FieldLabel>
-                  <input type="text" name="lastName" required className={inputClass} style={inputStyle} />
+                  <input
+                    type="text"
+                    name="lastName"
+                    required
+                    placeholder="Last name"
+                    className={inputClass}
+                    style={inputStyle}
+                  />
                 </label>
               </div>
 
               <label className="block">
-                <FieldLabel>Email Address</FieldLabel>
-                <input type="email" name="email" required className={inputClass} style={inputStyle} />
+                <FieldLabel required>Email Address</FieldLabel>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="you@email.com"
+                  className={inputClass}
+                  style={inputStyle}
+                />
               </label>
 
               <label className="block">
                 <FieldLabel>Subject</FieldLabel>
-                <input type="text" name="subject" required className={inputClass} style={inputStyle} />
+                <input
+                  type="text"
+                  name="subject"
+                  required
+                  placeholder="How can we help?"
+                  className={inputClass}
+                  style={inputStyle}
+                />
               </label>
 
               <label className="block">
-                <FieldLabel>Message</FieldLabel>
-                <textarea name="message" required rows={5} className={inputClass} style={inputStyle} />
+                <FieldLabel required>Message</FieldLabel>
+                <textarea
+                  name="message"
+                  required
+                  rows={5}
+                  placeholder="Tell us a little about your garden needs..."
+                  className={inputClass}
+                  style={inputStyle}
+                />
               </label>
 
               <button
