@@ -19,7 +19,7 @@ export function AboutTeaser() {
               className="mt-5 max-w-[640px] font-serif text-[26px] font-semibold leading-[1.15] tracking-[-0.01em] md:text-[30px]"
               style={{ color: "#1E4A2C" }}
             >
-              Rooted in experience and genuine care.
+              Rooted in experience, guided by genuine care.
             </h2>
             <p
               className="mt-6 max-w-[600px] text-[18px] leading-[1.45] md:text-[19px]"

@@ -75,7 +75,7 @@ export function ServicesTeaser() {
   const [pageValue, setPageValue] = useState(TOTAL * START_REPEAT);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
-  const [useTransition, setUseTransition] = useState(true);
+  const [useTransition, setUseTransition] = useState(false);
   const rafRef = useRef<number | null>(null);
   const prevTimeRef = useRef<number | null>(null);
 

@@ -81,7 +81,7 @@ const services: Service[] = [
     label: "Lawn & Privet Care",
     title: "Lawn & Privet Care",
     description:
-      "We can help coordinate lawn care, privet trimming, and related outdoor services upon request. Some services may be outsourced to trusted professionals for your convenience.",
+      "From lawn care and privet trimming to additional outdoor services, we help ensure every part of your property is beautifully maintained and well cared for. For specialized services, we work with trusted local partners who share our commitment to quality workmanship and a job well done.",
     imageSrc: "/lawn.jpeg",
     bullets: [
       "Professional design support available",
