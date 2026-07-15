@@ -81,6 +81,26 @@ export function About() {
 
           </div>
         </div>
+
+        <div className="mt-12 grid gap-8 md:grid-cols-[1fr_1fr] md:items-start md:gap-12">
+          <div>
+            <img
+              src="/about-truck-mulch.JPG"
+              alt="Truck and pile of mulch for garden work"
+              className="h-[300px] w-full rounded-2xl object-cover sm:h-[360px] md:h-[420px]"
+            />
+          </div>
+          <div
+            className="flex min-h-[300px] items-center rounded-2xl border border-dashed px-6 py-8 md:min-h-[420px]"
+            style={{ borderColor: "rgba(122,135,112,.38)", color: "#7A8770", backgroundColor: "#F1EBDD" }}
+            role="note"
+            aria-label="Placeholder for additional About text"
+          >
+            <p className="text-[16px] leading-relaxed">
+              Placeholder for new About text.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );

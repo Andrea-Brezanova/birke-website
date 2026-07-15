@@ -104,101 +104,166 @@ export function ServicesTabs() {
       className="scroll-mt-[88px] bg-ivory px-5 pb-10 pt-10 sm:px-8 sm:pb-12 sm:pt-12"
     >
       <div className="mx-auto flex min-h-[calc(100svh-88px)] max-w-[1080px] flex-col">
-        {/* Tab bar — underline style */}
-        <div
-          className="flex gap-6 overflow-x-auto border-b [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:justify-between md:gap-3"
-          style={{ borderColor: "rgba(30,74,44,.16)" }}
-          role="tablist"
-          aria-label="Service categories"
-        >
+        <div className="space-y-12 md:hidden">
           {services.map((service) => {
-            const isActive = service.id === activeId;
+            const mobileKey = `${service.id}:mobile`;
+            const mobileFailed = failedImages[mobileKey];
+
             return (
-              <button
-                key={service.id}
-                type="button"
-                role="tab"
-                id={`tab-${service.id}`}
-                aria-selected={isActive}
-                aria-controls={`panel-${service.id}`}
-                onClick={() => setActiveId(service.id)}
-                className="shrink-0 whitespace-nowrap pb-3 text-[15px] sm:text-[16px] transition-colors focus-visible:outline-none md:flex-1 md:text-center"
-                style={{
-                  color: isActive ? "#1E4A2C" : "#7A8770",
-                  fontWeight: isActive ? 600 : 400,
-                  borderBottom: isActive
-                    ? "2px solid #1E4A2C"
-                    : "2px solid transparent",
-                  marginBottom: "-1px",
-                  transform: service.id === "installations" ? "translateX(8px)" : undefined,
-                }}
-              >
-                {service.label}
-              </button>
+              <article key={service.id} id={`service-${service.id}`} className="grid items-start gap-6">
+                <div>
+                  <h3
+                    className="font-serif text-[32px] font-medium leading-tight"
+                    style={{ color: "#1E4A2C" }}
+                  >
+                    {service.title}
+                  </h3>
+                  <p className="mt-4 text-[17px] leading-relaxed" style={{ color: "#4C5A47" }}>
+                    {service.description}
+                  </p>
+                  {service.bullets?.length ? (
+                    <ul className="mt-5 space-y-2.5">
+                      {service.bullets.map((bullet) => (
+                        <li key={bullet} className="flex gap-3 text-[16px]" style={{ color: "#4C5A47" }}>
+                          <span
+                            className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full"
+                            style={{ backgroundColor: "#7A8770" }}
+                            aria-hidden="true"
+                          />
+                          <span>{bullet}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </div>
+
+                <div className="relative mx-auto h-[280px] w-full max-w-[440px] overflow-hidden rounded-3xl">
+                  {mobileFailed ? (
+                    <div
+                      className="flex h-full w-full items-center justify-center text-center text-[17px]"
+                      style={{
+                        backgroundColor: "transparent",
+                        color: "#7A8770",
+                      }}
+                    >
+                      Photo coming soon
+                    </div>
+                  ) : (
+                    <img
+                      src={service.imageSrc}
+                      alt={`${service.title} service`}
+                      className="h-full w-full object-cover object-center"
+                      onError={() =>
+                        setFailedImages((prev) => ({
+                          ...prev,
+                          [mobileKey]: true,
+                        }))
+                      }
+                    />
+                  )}
+                </div>
+              </article>
             );
           })}
         </div>
 
-        {/* Content grid */}
-        <div
-          role="tabpanel"
-          id={`panel-${active.id}`}
-          aria-labelledby={`tab-${active.id}`}
-          className="mt-10 grid items-start gap-8 md:mt-12 md:grid-cols-[1fr_1fr] md:gap-12"
-        >
-          <div>
-            <h3
-              className="font-serif text-[34px] font-medium leading-tight md:text-[42px]"
-              style={{ color: "#1E4A2C" }}
-            >
-              {active.title}
-            </h3>
-            <p
-              className="mt-4 text-[17px] leading-relaxed md:text-[19px]"
-              style={{ color: "#4C5A47" }}
-            >
-              {active.description}
-            </p>
-            {active.bullets?.length ? (
-              <ul className="mt-5 space-y-2.5">
-                {active.bullets.map((bullet) => (
-                  <li key={bullet} className="flex gap-3 text-[16px]" style={{ color: "#4C5A47" }}>
-                    <span
-                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full"
-                      style={{ backgroundColor: "#7A8770" }}
-                      aria-hidden="true"
-                    />
-                    <span>{bullet}</span>
-                  </li>
-                ))}
-              </ul>
-            ) : null}
+        <div className="hidden md:block">
+          {/* Tab bar — underline style */}
+          <div
+            className="flex gap-6 overflow-x-auto border-b [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:justify-between md:gap-3"
+            style={{ borderColor: "rgba(30,74,44,.16)" }}
+            role="tablist"
+            aria-label="Service categories"
+          >
+            {services.map((service) => {
+              const isActive = service.id === activeId;
+              return (
+                <button
+                  key={service.id}
+                  type="button"
+                  role="tab"
+                  id={`tab-${service.id}`}
+                  aria-selected={isActive}
+                  aria-controls={`panel-${service.id}`}
+                  onClick={() => setActiveId(service.id)}
+                  className="shrink-0 whitespace-nowrap pb-3 text-[15px] sm:text-[16px] transition-colors focus-visible:outline-none md:flex-1 md:text-center"
+                  style={{
+                    color: isActive ? "#1E4A2C" : "#7A8770",
+                    fontWeight: isActive ? 600 : 400,
+                    borderBottom: isActive
+                      ? "2px solid #1E4A2C"
+                      : "2px solid transparent",
+                    marginBottom: "-1px",
+                    transform: service.id === "installations" ? "translateX(8px)" : undefined,
+                  }}
+                >
+                  {service.label}
+                </button>
+              );
+            })}
           </div>
 
-          <div className="relative h-[280px] overflow-hidden rounded-3xl sm:h-[320px] md:h-[340px] lg:h-[360px]">
-            {primaryFailed ? (
-              <div
-                className="flex h-full w-full items-center justify-center text-center text-[17px]"
-                style={{
-                  backgroundColor: "transparent",
-                  color: "#7A8770",
-                }}
+          {/* Content grid */}
+          <div
+            role="tabpanel"
+            id={`panel-${active.id}`}
+            aria-labelledby={`tab-${active.id}`}
+            className="mt-10 grid items-start gap-8 md:mt-12 md:grid-cols-[1fr_1fr] md:gap-12"
+          >
+            <div>
+              <h3
+                className="font-serif text-[34px] font-medium leading-tight md:text-[42px]"
+                style={{ color: "#1E4A2C" }}
               >
-                Photo coming soon
-              </div>
-            ) : (
-              <img
-                src={active.imageSrc}
-                alt={`${active.title} service`}
-                className="h-full w-full object-cover"
-                onError={() =>
-                  setFailedImages((prev) => ({
-                    ...prev,
-                    [activePrimaryKey]: true,
-                  }))
-                }
-              />
-            )}
+                {active.title}
+              </h3>
+              <p
+                className="mt-4 text-[17px] leading-relaxed md:text-[19px]"
+                style={{ color: "#4C5A47" }}
+              >
+                {active.description}
+              </p>
+              {active.bullets?.length ? (
+                <ul className="mt-5 space-y-2.5">
+                  {active.bullets.map((bullet) => (
+                    <li key={bullet} className="flex gap-3 text-[16px]" style={{ color: "#4C5A47" }}>
+                      <span
+                        className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full"
+                        style={{ backgroundColor: "#7A8770" }}
+                        aria-hidden="true"
+                      />
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+            </div>
+
+            <div className="relative mx-auto h-[280px] w-full max-w-[440px] overflow-hidden rounded-3xl sm:h-[320px] md:h-[340px] lg:h-[360px]">
+              {primaryFailed ? (
+                <div
+                  className="flex h-full w-full items-center justify-center text-center text-[17px]"
+                  style={{
+                    backgroundColor: "transparent",
+                    color: "#7A8770",
+                  }}
+                >
+                  Photo coming soon
+                </div>
+              ) : (
+                <img
+                  src={active.imageSrc}
+                  alt={`${active.title} service`}
+                  className="h-full w-full object-cover object-center"
+                  onError={() =>
+                    setFailedImages((prev) => ({
+                      ...prev,
+                      [activePrimaryKey]: true,
+                    }))
+                  }
+                />
+              )}
+            </div>
           </div>
         </div>
       </div>

@@ -62,9 +62,9 @@ export function AboutTeaser() {
             }}
           >
             <img
-              src="/about-hero.JPG"
+              src="/watering.JPG"
               alt="Andrea working in a Nantucket garden"
-              className="h-full w-full object-cover object-center"
+              className="h-full w-full object-contain"
             />
           </div>
         </div>

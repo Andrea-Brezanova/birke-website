@@ -14,15 +14,14 @@ export function Hero() {
         fill
         priority
         sizes="100vw"
-        className="object-cover"
-        style={{ objectPosition: "0% 35%" }}
+        className="object-cover object-[50%_22%]"
       />
 
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(20,53,32,0.02) 0%, rgba(20,53,32,0.06) 45%, rgba(15,38,23,0.80) 100%)",
+            "linear-gradient(180deg, rgba(20,53,32,0) 0%, rgba(20,53,32,0) 50%, rgba(15,38,23,0.78) 100%)",
         }}
         aria-hidden="true"
       />
