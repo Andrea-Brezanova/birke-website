@@ -1,6 +1,26 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 export function About() {
+  const [frontPhotoId, setFrontPhotoId] = useState<"dock" | "mulch">("mulch");
+
+  const photos = [
+    {
+      id: "dock" as const,
+      src: "/about-behind.png",
+      alt: "Andrea on a Nantucket dock holding a blue watering can",
+      objectPosition: "center 30%",
+    },
+    {
+      id: "mulch" as const,
+      src: "/about-me-new.png",
+      alt: "Andrea standing in front of a truck and pile of mulch",
+      objectPosition: "65% 35%",
+    },
+  ];
+
   return (
     <section
       id="about"
@@ -13,41 +33,49 @@ export function About() {
       </h2>
       <div className="mx-auto grid min-h-[620px] max-w-[1280px] md:grid-cols-[0.85fr_1.15fr]">
         <div className="flex items-center px-5 py-12 sm:px-10 md:px-10 md:py-[88px] lg:px-[64px]">
-          <div className="relative mx-auto w-full max-w-[400px]">
-            <div
-              className="absolute left-[38px] top-[38px] h-[460px] w-full overflow-hidden rounded-[10px] border-[8px]"
-              style={{
-                borderColor: "#FBF8F1",
-                boxShadow: "0 20px 40px -20px rgba(20,53,32,.35)",
-                transform: "rotate(4deg)",
-              }}
-            >
-              <Image
-                src="/about-behind.png"
-                alt="Andrea on a Nantucket dock holding a blue watering can"
-                fill
-                sizes="(max-width: 768px) 90vw, 400px"
-                className="object-cover"
-                style={{ objectPosition: "center 30%" }}
-              />
-            </div>
-            <div
-              className="relative h-[460px] w-full overflow-hidden rounded-[10px] border-[8px]"
-              style={{
-                borderColor: "#FBF8F1",
-                boxShadow: "0 24px 50px -20px rgba(20,53,32,.4)",
-                transform: "rotate(-3deg)",
-              }}
-            >
-              <Image
-                src="/andrea-mulching.JPG"
-                alt="Andrea mulching a Nantucket garden bed"
-                fill
-                sizes="(max-width: 768px) 90vw, 400px"
-                className="object-cover"
-                style={{ objectPosition: "65% 35%" }}
-              />
-            </div>
+          <div className="relative mx-auto h-[500px] w-full max-w-[400px]">
+            {photos.map((photo) => {
+              const isFront = photo.id === frontPhotoId;
+
+              return (
+                <button
+                  key={photo.id}
+                  type="button"
+                  onClick={() =>
+                    setFrontPhotoId((current) =>
+                      current === "dock" ? "mulch" : "dock",
+                    )
+                  }
+                  className="absolute h-[460px] w-full overflow-hidden rounded-[10px] border-[8px] p-0 transition-transform duration-300 ease-out"
+                  style={{
+                    left: isFront ? "0px" : "38px",
+                    top: isFront ? "0px" : "38px",
+                    zIndex: isFront ? 20 : 10,
+                    borderColor: "#FBF8F1",
+                    boxShadow: isFront
+                      ? "0 24px 50px -20px rgba(20,53,32,.4)"
+                      : "0 20px 40px -20px rgba(20,53,32,.35)",
+                    transform: isFront ? "rotate(-3deg)" : "rotate(4deg)",
+                    cursor: "pointer",
+                    backgroundColor: "transparent",
+                  }}
+                  aria-label={
+                    isFront
+                      ? "Photo in front, click to send behind"
+                      : "Photo behind, click to bring front"
+                  }
+                >
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    sizes="(max-width: 768px) 90vw, 400px"
+                    className="object-cover"
+                    style={{ objectPosition: photo.objectPosition }}
+                  />
+                </button>
+              );
+            })}
           </div>
         </div>
 
