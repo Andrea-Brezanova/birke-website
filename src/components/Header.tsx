@@ -5,9 +5,9 @@ import { useEffect, useState } from "react";
 
 const navLinks = [
   { label: "Home", href: "/", sectionId: "home" },
-  { label: "Services", href: "/services", sectionId: null },
+  { label: "Services", href: "/services", sectionId: "services" },
   { label: "Our Mission", href: "/#our-mission", sectionId: "our-mission" },
-  { label: "About", href: "/about", sectionId: null },
+  { label: "About", href: "/about", sectionId: "about" },
   { label: "Contact", href: "/#contact", sectionId: "contact" },
 ];
 
@@ -46,9 +46,11 @@ export function Header() {
 
         if (visible.length === 0) return;
 
-        const activeId =
-          visible[0].target.id === "home" ? "/" : `/#${visible[0].target.id}`;
-        setActiveHref(activeId);
+        const activeId = visible[0].target.id;
+        const matchingLink = navLinks.find((link) => link.sectionId === activeId);
+        if (matchingLink) {
+          setActiveHref(matchingLink.href);
+        }
       },
       {
         // Track the section occupying the center of the viewport.

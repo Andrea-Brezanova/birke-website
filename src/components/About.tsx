@@ -1,105 +1,106 @@
-"use client";
-
-import { useState } from "react";
+import Image from "next/image";
 
 export function About() {
-  const [imageMissing, setImageMissing] = useState(false);
-
   return (
     <section
       id="about"
-      className="scroll-mt-[88px] bg-ivory px-5 pb-12 pt-10 sm:px-8 sm:pb-14 sm:pt-12"
+      className="scroll-mt-[88px]"
+      style={{ backgroundColor: "#FBF8F1" }}
       aria-labelledby="about-heading"
     >
-      <div className="mx-auto min-h-[calc(100svh-88px)] max-w-[1080px]">
-        <p
-          className="text-[13px] uppercase tracking-[0.32em]"
-          style={{ color: "#7A8770" }}
-        >
-          Meet Andrea
-        </p>
-
-        <div className="mt-6 grid items-center gap-8 md:mt-8 md:grid-cols-[1fr_1fr] md:gap-12">
-          <div className="order-1 md:order-none">
-          {imageMissing ? (
+      <h2 id="about-heading" className="sr-only">
+        Meet Andrea
+      </h2>
+      <div className="mx-auto grid min-h-[620px] max-w-[1280px] md:grid-cols-[0.85fr_1.15fr]">
+        <div className="flex items-center px-5 py-12 sm:px-10 md:px-10 md:py-[88px] lg:px-[64px]">
+          <div className="relative mx-auto w-full max-w-[400px]">
             <div
-              className="flex h-[340px] w-full items-center justify-center rounded-2xl text-center text-[17px] sm:h-[420px] md:h-[520px]"
-              style={{ backgroundColor: "#F1EBDD", color: "#7A8770" }}
+              className="absolute left-[38px] top-[38px] h-[460px] w-full overflow-hidden rounded-[10px] border-[8px]"
+              style={{
+                borderColor: "#FBF8F1",
+                boxShadow: "0 20px 40px -20px rgba(20,53,32,.35)",
+                transform: "rotate(4deg)",
+              }}
             >
-              Photo coming soon
+              <Image
+                src="/about-behind.png"
+                alt="Andrea on a Nantucket dock holding a blue watering can"
+                fill
+                sizes="(max-width: 768px) 90vw, 400px"
+                className="object-cover"
+                style={{ objectPosition: "center 30%" }}
+              />
             </div>
-          ) : (
-            <img
-              src="/mulching.JPG"
-              alt="Andrea in a Nantucket garden"
-              className="h-[340px] w-full rounded-2xl object-cover sm:h-[420px] md:h-[520px]"
-              onError={() => setImageMissing(true)}
-            />
-          )}
-        </div>
-
-          <div className="order-2 md:order-none md:self-center">
-            <h2 id="about-heading" className="sr-only">
-              About Andrea
-            </h2>
-
-            <p className="text-[15px] leading-relaxed md:text-[16px]" style={{ color: "#4C5A47" }}>
-              Behind Birke Garden Care is Andrea, whose lifelong love of flowers
-              began in childhood and grew into a career caring for Nantucket
-              gardens. What started with a job at Bartlett&apos;s Farm developed
-              through years of hands-on experience, including nearly two decades
-              learning from and working alongside Bridget of Champoux
-              Landscapes.
-            </p>
-
-            <p className="mt-4 text-[15px] leading-relaxed md:text-[16px]" style={{ color: "#4C5A47" }}>
-              With more than 20 years of on-island experience, Andrea brings a
-              practical eye, steady attention to detail, and a personal
-              understanding of what Nantucket homes, rentals, and seasonal
-              properties need throughout the year.
-            </p>
-
-            <p className="mt-4 text-[15px] leading-relaxed md:text-[16px]" style={{ color: "#4C5A47" }}>
-              She takes pride in her work and approaches every project with
-              professionalism, efficiency, and trust.
-            </p>
-
-            <blockquote
-              className="mt-6 border-l-2 pl-4 text-[15px] italic leading-relaxed md:text-[16px]"
-              style={{ borderColor: "rgba(30,74,44,.22)", color: "#4C5A47" }}
+            <div
+              className="relative h-[460px] w-full overflow-hidden rounded-[10px] border-[8px]"
+              style={{
+                borderColor: "#FBF8F1",
+                boxShadow: "0 24px 50px -20px rgba(20,53,32,.4)",
+                transform: "rotate(-3deg)",
+              }}
             >
-              &ldquo;I have great memories of our time working together. You are one of
-              the best workers I know and have such a pleasant disposition.
-              Anyone would be lucky to have you.&rdquo;
-            </blockquote>
-            <p className="mt-2 text-[14px]" style={{ color: "#7A8770" }}>
-              — Bridget Montgomery
-            </p>
-            <p className="text-[12px]" style={{ color: "#7A8770" }}>
-              Champoux Landscapes
-            </p>
-
+              <Image
+                src="/andrea-mulching.JPG"
+                alt="Andrea mulching a Nantucket garden bed"
+                fill
+                sizes="(max-width: 768px) 90vw, 400px"
+                className="object-cover"
+                style={{ objectPosition: "65% 35%" }}
+              />
+            </div>
           </div>
         </div>
 
-        <div className="mt-12 grid gap-8 md:grid-cols-[1fr_1fr] md:items-start md:gap-12">
-          <div>
-            <img
-              src="/about-truck-mulch.JPG"
-              alt="Truck and pile of mulch for garden work"
-              className="h-[300px] w-full rounded-2xl object-cover sm:h-[360px] md:h-[420px]"
-            />
-          </div>
-          <div
-            className="flex min-h-[300px] items-center rounded-2xl border border-dashed px-6 py-8 md:min-h-[420px]"
-            style={{ borderColor: "rgba(122,135,112,.38)", color: "#7A8770", backgroundColor: "#F1EBDD" }}
-            role="note"
-            aria-label="Placeholder for additional About text"
+        <div
+          className="flex flex-col justify-center px-5 py-12 sm:px-10 md:px-10 md:py-[88px] lg:px-[64px]"
+          style={{ backgroundColor: "#F1EBDD" }}
+        >
+          <p
+            className="mb-5 text-[12px] uppercase tracking-[0.3em]"
+            style={{ color: "#7A8770" }}
           >
-            <p className="text-[16px] leading-relaxed">
-              Placeholder for new About text.
+            Meet Andrea
+          </p>
+
+          <p
+            className="mb-5 text-[16.5px] leading-[1.75]"
+            style={{ color: "#4C5A47" }}
+          >
+            Birke Garden Care has emerged from a lifelong love of flowers, that began in early childhood and grew into a career caring for Nantucket gardens.
+          </p>
+          <p
+            className="mb-5 text-[16.5px] leading-[1.75]"
+            style={{ color: "#4C5A47" }}
+          >
+            What started with a job at Bartlett&apos;s Farm developed through years of hands-on experience, including nearly two decades learning from and working alongside Bridget of Champoux Landscapes.
+          </p>
+          <p
+            className="mb-5 text-[16.5px] leading-[1.75]"
+            style={{ color: "#4C5A47" }}
+          >
+            With more than 20 years of on-island experience, Andrea brings a practical eye, steady attention to detail, and a personal understanding of what Nantucket homes, rentals, and seasonal properties need throughout the year.
+          </p>
+          <p
+            className="mb-[30px] text-[16.5px] leading-[1.75]"
+            style={{ color: "#4C5A47" }}
+          >
+            Hardworking and hands-on, she takes pride in her work and approaches every project with professionalism, efficiency, and trust.
+          </p>
+
+          <blockquote
+            className="border-l-[2.5px] pl-[22px]"
+            style={{ borderColor: "#1E4A2C" }}
+          >
+            <p
+              className="mb-3 font-serif text-[19px] italic leading-[1.5]"
+              style={{ color: "#1E4A2C" }}
+            >
+              I have great memories of our time working together. You are one of the best workers I know and have such a pleasant disposition. Anyone would be lucky to have you.
             </p>
-          </div>
+            <p className="text-[13.5px]" style={{ color: "#7A8770" }}>
+              — Bridget Montgomery, Champoux Landscapes
+            </p>
+          </blockquote>
         </div>
       </div>
     </section>

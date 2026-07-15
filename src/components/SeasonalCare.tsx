@@ -2,7 +2,7 @@ export function SeasonalCare() {
   return (
     <section
       id="our-mission"
-      className="scroll-mt-[88px] bg-forest px-6 pb-10 pt-10 text-center sm:px-12 sm:pb-12 sm:pt-12"
+      className="scroll-mt-[88px] bg-forest px-6 py-16 text-center sm:px-12 sm:py-20"
       aria-labelledby="mission-heading"
     >
       <div className="mx-auto max-w-[840px]">

@@ -95,7 +95,7 @@ export function Contact() {
           <div>
             <h3
               id="contact-heading"
-              className="-mt-2 font-serif text-[40px] font-medium leading-tight text-ivory md:-mt-3"
+              className="-mt-2 font-serif text-[26px] font-semibold leading-[1.15] tracking-[-0.01em] text-ivory md:-mt-3 md:text-[30px]"
             >
               Let&apos;s talk about your garden.
             </h3>

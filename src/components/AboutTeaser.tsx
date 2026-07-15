@@ -12,14 +12,14 @@ export function AboutTeaser() {
               className="text-[13px] uppercase tracking-[0.32em]"
               style={{ color: "#7A8770" }}
             >
-              Our roots
+              About
             </p>
             <h2
               id="about-teaser-heading"
-              className="mt-5 max-w-[640px] font-serif text-[34px] font-medium leading-tight tracking-[-0.01em] md:text-[42px]"
+              className="mt-5 max-w-[640px] font-serif text-[26px] font-semibold leading-[1.15] tracking-[-0.01em] md:text-[30px]"
               style={{ color: "#1E4A2C" }}
             >
-              Rooted in experience and a genuine love of gardens.
+              Rooted in experience and genuine care.
             </h2>
             <p
               className="mt-6 max-w-[600px] text-[18px] leading-[1.45] md:text-[19px]"
@@ -62,9 +62,9 @@ export function AboutTeaser() {
             }}
           >
             <img
-              src="/watering.JPG"
+              src="/andrea-roots.png"
               alt="Andrea working in a Nantucket garden"
-              className="h-full w-full object-contain"
+              className="h-full w-full rounded-2xl object-cover"
             />
           </div>
         </div>

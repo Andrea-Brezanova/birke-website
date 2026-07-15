@@ -29,7 +29,7 @@ const services: Service[] = [
     label: "Garden Care",
     title: "Garden Care",
     description:
-      "Hands-on, seasonal attention for established beds and borders — from cleanups and planting to the steady upkeep that keeps a garden looking its best from spring through fall.",
+      "Hands-on, season-long attention for established beds and borders — planting, weeding, deadheading, and dividing to keep a garden thriving.",
     imageSrc: "/garden-care-daisies.png",
     bullets: [
       "Spring and fall cleanups and mulching",
@@ -42,7 +42,7 @@ const services: Service[] = [
     label: "Maintenance",
     title: "Maintenance",
     description:
-      "Reliable, ongoing upkeep on a schedule that suits your property, so the garden stays tidy, healthy, and cared for throughout the season.",
+      "Reliable, scheduled upkeep that keeps every outdoor space tidy and healthy through the season.",
     imageSrc: "/maintenance.JPG",
     bullets: [
       "Recurring weekly, bi-weekly or monthly care",
@@ -55,7 +55,7 @@ const services: Service[] = [
     label: "Installations",
     title: "Installations",
     description:
-      "Whether you have a design in mind or would like creative guidance, we help create and install outdoor spaces that feel beautiful, welcoming, and made to be enjoyed.",
+      "New plantings and garden features installed with care, from foundation beds to container gardens.",
     imageSrc: "/install.jpg",
     bullets: [
       "Plant selection and placement",
@@ -67,7 +67,7 @@ const services: Service[] = [
     label: "Makeovers",
     title: "Makeovers",
     description:
-      "Thoughtful refreshes and full makeovers — reworking tired beds, choosing plants suited to Nantucket conditions, and bringing quiet new life to an outdoor space.",
+      "Full refreshes for tired beds and borders — reworking layouts and plant choices to bring new life to a space.",
     imageSrc: "/makeovers.JPG",
     bullets: [
       "Refreshes for tired or overgrown garden spaces",
@@ -81,7 +81,7 @@ const services: Service[] = [
     label: "Lawn & Privet Care",
     title: "Lawn & Privet Care",
     description:
-      "We can coordinate lawn care, privet trimming, and other outdoor services as part of your property care. We partner with trusted local professionals to ensure every aspect of your landscape is well looked after.",
+      "We can help coordinate lawn care, privet trimming, and related outdoor services upon request. Some services may be outsourced to trusted professionals for your convenience.",
     imageSrc: "/lawn.jpeg",
     bullets: [
       "Professional design support available",
@@ -137,7 +137,7 @@ export function ServicesTabs() {
                   ) : null}
                 </div>
 
-                <div className="relative mx-auto h-[280px] w-full max-w-[440px] overflow-hidden rounded-3xl">
+                <div className="relative mx-auto h-[280px] w-full max-w-[440px] overflow-hidden rounded-2xl">
                   {mobileFailed ? (
                     <div
                       className="flex h-full w-full items-center justify-center text-center text-[17px]"
@@ -239,7 +239,7 @@ export function ServicesTabs() {
               ) : null}
             </div>
 
-            <div className="relative mx-auto h-[280px] w-full max-w-[440px] overflow-hidden rounded-3xl sm:h-[320px] md:h-[340px] lg:h-[360px]">
+            <div className="relative mx-auto h-[280px] w-full max-w-[440px] overflow-hidden rounded-2xl sm:h-[320px] md:h-[340px] lg:h-[360px]">
               {primaryFailed ? (
                 <div
                   className="flex h-full w-full items-center justify-center text-center text-[17px]"

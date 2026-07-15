@@ -5,50 +5,46 @@ import { useEffect, useMemo, useRef, useState } from "react";
 type HomeService = {
   title: string;
   summary: string;
-  imageSrc: string;
   vectorSrc: string;
-  vectorClassName?: string;
+  iconClassName?: string;
 };
 
 const services: HomeService[] = [
   {
     title: "Window Boxes & Containers",
     summary: "Fresh seasonal plantings for window boxes, pots, and containers.",
-    imageSrc: "/containers.JPG",
     vectorSrc: "/vectors/windowbox-icon.svg",
-    vectorClassName: "h-[8.75rem] w-[8.75rem]",
+    iconClassName: "h-[180px] w-[180px]",
   },
   {
     title: "Full Garden Care",
-    summary: "Hands-on seasonal care for established beds and borders.",
-    imageSrc: "/garden-care-daisies.png",
+    summary: "Hands-on, season-long attention for established beds and borders.",
     vectorSrc: "/vectors/garden-care.svg",
+    iconClassName: "h-[180px] w-[180px]",
   },
   {
     title: "Greenscapes Maintenance",
-    summary: "Reliable scheduled upkeep to keep gardens tidy and healthy.",
-    imageSrc: "/maintenance.JPG",
+    summary: "Reliable, scheduled upkeep that keeps every outdoor space tidy and healthy.",
     vectorSrc: "/vectors/maintenance.svg",
-    vectorClassName: "h-20 w-20",
+    iconClassName: "h-[180px] w-[180px]",
   },
   {
     title: "Installations",
     summary: "Garden installation with creative guidance from concept to finish.",
-    imageSrc: "/install.jpg",
     vectorSrc: "/vectors/installations.svg",
+    iconClassName: "h-[180px] w-[180px]",
   },
   {
     title: "Makeovers",
     summary: "Thoughtful refreshes for tired beds and overgrown spaces.",
-    imageSrc: "/makeovers.JPG",
     vectorSrc: "/vectors/makeovers.svg",
+    iconClassName: "h-[180px] w-[180px]",
   },
   {
     title: "Lawn & Privet Care",
     summary: "Coordination for lawn, privet trimming, and related outdoor services.",
-    imageSrc: "/lawn.jpeg",
     vectorSrc: "/vectors/lawns-privets.svg",
-    vectorClassName: "h-[8rem] w-[8rem]",
+    iconClassName: "h-[180px] w-[180px]",
   },
 ];
 
@@ -181,6 +177,7 @@ export function ServicesTeaser() {
 
   return (
     <section
+      id="services"
       className="bg-ivory px-6 py-14 text-center sm:px-10 sm:py-16"
       style={{ backgroundColor: "#FBF8F1" }}
       aria-labelledby="services-teaser-heading"
@@ -190,7 +187,7 @@ export function ServicesTeaser() {
           className="text-[13px] uppercase tracking-[0.32em]"
           style={{ color: "#7A8770" }}
         >
-          What we do
+          Services
         </p>
         <h2 id="services-teaser-heading" className="sr-only">
           Services
@@ -219,39 +216,40 @@ export function ServicesTeaser() {
             >
               {trackCards.map((service, index) => (
                 <article key={service.key ?? `${service.title}-${index}`} className="shrink-0" style={{ width: `${CARD_WIDTH}px` }}>
-                  <div className="flex flex-col items-center">
+                  <div className="mx-auto flex max-w-[280px] flex-col items-center text-center">
                     <div className="relative">
-                      <img
-                        src={service.imageSrc}
-                        alt={service.title}
-                        className="h-[210px] w-[210px] rounded-full object-cover"
-                      />
+                      <div
+                        className="flex h-[180px] w-[180px] items-center justify-center overflow-hidden rounded-full"
+                        style={{ backgroundColor: "#F1EBDD" }}
+                      >
+                        <img
+                          src={service.vectorSrc}
+                          alt=""
+                          aria-hidden="true"
+                          className={service.iconClassName ?? "h-[150px] w-[150px]"}
+                          style={{ backgroundColor: "#F1EBDD", display: "block" }}
+                        />
+                      </div>
                       <span
-                        className="absolute left-1/2 top-[-10px] flex h-[40px] w-[40px] -translate-x-1/2 items-center justify-center rounded-full border font-serif text-[23px] leading-none"
+                        className="absolute left-1/2 top-[-9px] flex h-[38px] w-[38px] -translate-x-1/2 items-center justify-center rounded-full border font-serif text-[23px] leading-none"
                         style={{
                           backgroundColor: "#FBF8F1",
-                          borderColor: "rgba(20,53,32,.12)",
+                          borderColor: "rgba(20,53,32,.15)",
                           color: "#1E4A2C",
-                          boxShadow: "0 4px 10px rgba(20,53,32,.10)",
+                          boxShadow: "0 4px 10px rgba(20,53,32,.12)",
                         }}
                       >
                         {String((index % TOTAL) + 1).padStart(2, "0")}
                       </span>
                     </div>
-                    <div className="mt-4 flex h-24 w-24 items-center justify-center">
-                      <img
-                        src={service.vectorSrc}
-                        alt=""
-                        aria-hidden="true"
-                        className={`${service.vectorClassName ?? "h-24 w-24"} object-contain`}
-                        style={{ mixBlendMode: "multiply" }}
-                      />
-                    </div>
-                    <p className="mt-4 text-[18px] font-serif leading-tight" style={{ color: "#1E4A2C" }}>
+                    <p
+                      className="mt-4 text-[22px] font-serif font-semibold leading-[1.15] tracking-[-0.01em] md:text-[24px]"
+                      style={{ color: "#1E4A2C" }}
+                    >
                       {service.title}
                     </p>
                     <p
-                      className="mt-2 max-w-[240px] text-[14px] leading-[1.45]"
+                      className="mt-2 max-w-[250px] text-[15px] leading-[1.55] md:text-[16px]"
                       style={{ color: "#4C5A47" }}
                     >
                       {service.summary}
